@@ -1,1 +1,32 @@
-<app-welcome-page></app-welcome-page>
+<!-- <app-welcome-page></app-welcome-page> -->
+
+<nav class="navbar p-3 navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="newsFeed">
+    <img
+      src="../assets/img/Logo_nws4You2.png"
+      alt="logoNews4You"
+      id="logonws"
+    />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="global">Global</a>
+      <a class="nav-item nav-link" routerLink="personal">Personal</a>
+      <a class="nav-item nav-link" routerLink="topic">Topic</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Routes -->
+<router-outlet></router-outlet>
