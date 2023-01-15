@@ -1,0 +1,16 @@
+.logo-row {
+  height: 50vh;
+}
+
+.welcome-row {
+  height: 50vh;
+}
+
+#logonws {
+  width: 30vw;
+}
+
+#welcome-text {
+  font-size: 1.5rem;
+  max-width: 50vw;
+}
