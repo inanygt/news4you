@@ -23,6 +23,18 @@ Route::get('/users', function () {
     return DB::table('users')->get(); 
 });
 
+// Add user to database 
+// Route::post()
+
+// add todo to database
+// Route::post('/todos', function (Request $request) {
+// $todo = DB::table('todos')->insert([ 
+//     'title' => $request->title, 
+//     'status' => $request->status
+// ]);
+// return $todo; 
+// });
+
 // // Get user id
 // Route::get('/users/{id}', function ($id) {
 //     return DB::table('users')->where('id', $id)->first(); 
