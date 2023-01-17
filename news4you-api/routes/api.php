@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
 // get all users 
 Route::get('/users', function () {
@@ -24,19 +24,12 @@ Route::get('/users', function () {
 });
 
 // Add user to database 
-// Route::post()
-
-// add todo to database
-// Route::post('/todos', function (Request $request) {
-// $todo = DB::table('todos')->insert([ 
-//     'title' => $request->title, 
-//     'status' => $request->status
-// ]);
-// return $todo; 
-// });
-
-// // Get user id
-// Route::get('/users/{id}', function ($id) {
-//     return DB::table('users')->where('id', $id)->first(); 
-// });
+Route::post('/users', function (Request $request) {
+    $user = DB::table('users')->insert([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' =>$request->password
+    ]);
+    return $user;
+});
 
