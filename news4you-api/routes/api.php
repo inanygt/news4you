@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 // get all users 
 Route::get('/users', function () {
     return DB::table('users')->get(); 
 });
 
-// Get user id
-Route::get('/users/{id}', function ($id) {
-    return DB::table('users')->where('id', $id)->first(); 
-});
+// // Get user id
+// Route::get('/users/{id}', function ($id) {
+//     return DB::table('users')->where('id', $id)->first(); 
+// });
 
