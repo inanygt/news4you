@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NwsapiService } from 'src/app/nwsapi.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,6 +14,7 @@ export class SignupComponent implements OnInit {
   username!: string;
   email!: string;
   password!: string;
+  cpassword!: string;
 
   hideShowPass() {
     this.isText = !this.isText;
@@ -20,8 +22,11 @@ export class SignupComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   }
 
+  constructor(private NwsapiService: NwsapiService) {}
+
   signup() {
-    console.log(this.username, this.email);
+    console.log(this.username, this.email, this.password, this.cpassword);
+    this.NwsapiService.getusers();
   }
 
   ngOnInit(): void {}
