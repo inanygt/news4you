@@ -3,11 +3,6 @@
   background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%) no-repeat;
 }
 
-#logonws {
-  width: 5rem;
-  margin: 2em;
-}
-
 .container {
   max-width: 500px;
 }
@@ -17,7 +12,6 @@
 }
 .input-field {
 }
-
 #forget {
   min-width: 100px;
   margin-left: auto;
@@ -74,23 +68,10 @@ input[type="password"] {
   box-shadow: none;
 }
 
-.img {
+img {
   width: 40px;
   height: 40px;
   object-fit: cover;
   border-radius: 50%;
   position: relative;
-}
-
-.bordert {
-  border-top: 1px solid #aaa;
-  position: relative;
-}
-
-.bordert:after {
-  content: "or connect with";
-  position: absolute;
-  top: -13px;
-  background-color: #eff;
-  padding: 0 8px;
 }

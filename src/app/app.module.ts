@@ -10,9 +10,15 @@ import { NewsfeedGlobalComponent } from './newsfeed-global/newsfeed-global.compo
 import { NewsfeedpersComponent } from './newsfeedpers/newsfeedpers.component';
 import { NewsfeedtopicComponent } from './newsfeedtopic/newsfeedtopic.component';
 import { FormsModule } from '@angular/forms';
+import { TopicsComponent } from './topics/topics.component';
+import { HomeComponent } from './components/home/home.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const appRoutes: Routes = [
-  { path: '', component: NewsfeedComponent },
+  // { path: '', component: NewsfeedComponent },
+  { path: '', component: WelcomePageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'newsFeed', component: NewsfeedComponent },
   { path: 'global', component: NewsfeedGlobalComponent },
   { path: 'personal', component: NewsfeedpersComponent },
@@ -28,6 +34,9 @@ const appRoutes: Routes = [
     NewsfeedGlobalComponent,
     NewsfeedpersComponent,
     NewsfeedtopicComponent,
+    TopicsComponent,
+    HomeComponent,
+    SignupComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [],

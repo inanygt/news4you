@@ -4,20 +4,34 @@
       <div class="offset-md2 col-lg5 col md-7 offset-lg4 offset-md3">
         <div class="panel border bg-white">
           <div class="panel-heading">
-            <img
-              src="../assets/img/Logo_nws4You2.png"
-              id="logonws"
-              alt="logonws_logo"
-            />
+            <h3 class="pt-3 font-weight-bold">
+              News 4 You <br />
+              Sign up
+            </h3>
           </div>
           <div class="panel-body p-3">
             <form>
               <div class="form-group pt3">
                 <div class="input-field">
                   <span class="fa fa-user p-2"></span>
+                  <input type="text" placeholder="Username" />
+                </div>
+              </div>
+
+              <div class="form-group pt3">
+                <div class="input-field">
+                  <span class="fa fa-calendar p-2"></span>
+                  <input type="date" placeholder="Birthdate" />
+                </div>
+              </div>
+
+              <div class="form-group pt3">
+                <div class="input-field">
+                  <span class="fa fa-user p-2"></span>
                   <input type="text" placeholder="Email" />
                 </div>
               </div>
+
               <div class="form-group pt3">
                 <div class="input-field">
                   <span class="fa fa-lock p-2"></span>
@@ -28,27 +42,30 @@
                   ></span>
                 </div>
               </div>
-              <div class="form-inline fr mt-4">
-                <a id="forget" class="font-weight-bold">Forgot Password?</a>
+
+              <div class="form-group pt3">
+                <div class="input-field">
+                  <span class="fa fa-lock p-2"></span>
+                  <input [type]="type" placeholder="Confirm Password" />
+                  <span
+                    (click)="hideShowPass()"
+                    class="fa {{ eyeIcon }}"
+                  ></span>
+                </div>
               </div>
+
               <button
                 type="submit"
                 class="btn btn-primary btc-block mt-4 w-100%"
               >
-                Login
+                Sign up
               </button>
               <div class="text-center pt-4 text-muted">
-                Dont have a account?
-                <a id="forgot" routerLink="/signup">Sign up</a>
+                already have a <a id="forgot" routerLink="/login">login?</a>
               </div>
             </form>
           </div>
         </div>
-        <!-- <div class="mx-3 my-2 py-2 bordert">
-          <div class="text-center py-3">
-            for adding facebook, gmail, githhub, ...
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
