@@ -14,6 +14,9 @@ import { TopicsComponent } from './topics/topics.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 const appRoutes: Routes = [
   // { path: '', component: NewsfeedComponent },
   { path: '', component: WelcomePageComponent },
@@ -37,8 +40,10 @@ const appRoutes: Routes = [
     TopicsComponent,
     HomeComponent,
     SignupComponent,
+
+
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

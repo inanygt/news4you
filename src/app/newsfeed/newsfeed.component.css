@@ -1,0 +1,11 @@
+div{
+  max-height: fit-content;
+}
+
+img{
+  max-height: 200px;
+}
+
+.title{
+  font-weight: bold;
+}

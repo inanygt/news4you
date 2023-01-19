@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { getLocaleDateFormat } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { NewsApiService } from '../services/news-api-service';
+
 
 @Component({
   selector: 'app-newsfeed',
   templateUrl: './newsfeed.component.html',
   styleUrls: ['./newsfeed.component.css']
 })
-export class NewsfeedComponent {
+export class NewsfeedComponent implements OnInit {
 
+  newdata:any = []
+
+  constructor(private NewsApiService: NewsApiService) {}
+
+  ngOnInit(): void {
+    this.NewsApiService.getData().then((data: any) => {
+      console.log(
+        this.newdata = data.articles)
+        console.log(this.newdata)
+    })
+  }
 }
+
+

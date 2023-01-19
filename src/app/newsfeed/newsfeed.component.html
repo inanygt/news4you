@@ -1,1 +1,15 @@
-<p>newsfeed works!</p>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let newdata of newdata">
+
+      <div class="row">
+          <div class="col-10">
+              <span class="title">{{newdata.title}}</span>
+
+              <div class="">{{newdata.description}}</div>
+              <div class=""><img src="{{newdata.urlToImage}}" alt=""></div>
+              <div><a href="{{newdata.url}}">Link</a></div>
+          </div>
+
+      </div>
+  </li>
