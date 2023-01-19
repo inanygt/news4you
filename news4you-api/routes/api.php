@@ -23,18 +23,22 @@ Route::get('/users', function () {
     return DB::table('users')->get(); 
 });
 
+
+// Get user login
+Route::get('/users/{name}', function ($name) {
+    
+    if (!DB::table('users')->where('name', $name)->exists()) {
+        return response()->json([
+            'message' => 'User not found'
+        ], 404);
+    }
+    // return DB::table('users')->where('name', $name)->first();
+    // do the same but with plain sql
+    return DB::select('select * from users where name = ?', [$name]);
+
+});
+
 // Add user to database 
-
-// Route::post('/users', function (Request $request) {
-//     $user = DB::table('users')->insert([
-//         'name' => $request->name,
-//         'email' => $request->email,
-//         'password' =>$request->password,
-//         'birthdate' =>$request->birthdate 
-//     ]);
-//     return $user;
-// });
-
 Route::post('/users', function (Request $request) {
     $name = $request->input('name');
     $password = $request->input('password');

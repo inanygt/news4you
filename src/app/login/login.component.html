@@ -11,37 +11,37 @@
             />
           </div>
           <div class="panel-body p-3">
-            <form>
-              <div class="form-group pt3">
-                <div class="input-field">
-                  <span class="fa fa-user p-2"></span>
-                  <input type="text" placeholder="Email" />
-                </div>
+            <div class="form-group pt3">
+              <div class="input-field">
+                <span class="fa fa-user p-2"></span>
+                <input type="text" placeholder="Email" [(ngModel)]="email" />
               </div>
-              <div class="form-group pt3">
-                <div class="input-field">
-                  <span class="fa fa-lock p-2"></span>
-                  <input [type]="type" placeholder="Password" />
-                  <span
-                    (click)="hideShowPass()"
-                    class="fa {{ eyeIcon }}"
-                  ></span>
-                </div>
+            </div>
+            <div class="form-group pt3">
+              <div class="input-field">
+                <span class="fa fa-lock p-2"></span>
+                <input
+                  [type]="type"
+                  placeholder="Password"
+                  [(ngModel)]="password"
+                />
+                <span (click)="hideShowPass()" class="fa {{ eyeIcon }}"></span>
               </div>
-              <div class="form-inline fr mt-4">
-                <a id="forget" class="font-weight-bold">Forgot Password?</a>
-              </div>
-              <button
-                type="submit"
-                class="btn btn-primary btc-block mt-4 w-100%"
-              >
-                Login
-              </button>
-              <div class="text-center pt-4 text-muted">
-                Dont have a account?
-                <a id="forgot" routerLink="/signup">Sign up</a>
-              </div>
-            </form>
+            </div>
+            <div class="form-inline fr mt-4">
+              <a id="forget" class="font-weight-bold">Forgot Password?</a>
+            </div>
+            <button
+              (click)="loginbtn()"
+              type="submit"
+              class="btn btn-primary btc-block mt-4 w-100%"
+            >
+              Login
+            </button>
+            <div class="text-center pt-4 text-muted">
+              Dont have a account?
+              <a id="forgot" routerLink="/signup">Sign up</a>
+            </div>
           </div>
         </div>
         <!-- <div class="mx-3 my-2 py-2 bordert">
