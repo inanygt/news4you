@@ -14,17 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
 // get all users 
 Route::get('/users', function () {
     return DB::table('users')->get(); 
 });
 
-// // Get user id
-// Route::get('/users/{id}', function ($id) {
-//     return DB::table('users')->where('id', $id)->first(); 
-// });
+// Add user to database 
+Route::post('/users', function (Request $request) {
+    $user = DB::table('users')->insert([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' =>$request->password
+        // 'password' => Hash::make($password)
+
+        
+    ]);
+    return $user;
+});
 

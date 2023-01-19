@@ -10,65 +10,75 @@
             </h3>
           </div>
           <div class="panel-body p-3">
-            <form>
-              <div class="form-group pt3">
-                <div class="input-field">
-                  <span class="fa fa-user p-2"></span>
-                  <input type="text" placeholder="Username" />
-                </div>
+            <div class="form-group pt3">
+              <div class="input-field">
+                <span class="fa fa-user p-2"></span>
+                <!-- Username -->
+                <input
+                  [(ngModel)]="username"
+                  type="text"
+                  placeholder="Username"
+                />
               </div>
+            </div>
 
-              <div class="form-group pt3">
-                <div class="input-field">
-                  <span class="fa fa-calendar p-2"></span>
-                  <input type="date" placeholder="Birthdate" />
-                </div>
+            <div class="form-group pt3">
+              <div class="input-field">
+                <span class="fa fa-calendar p-2"></span>
+                <!-- date of brith -->
+                <input
+                  [(ngModel)]="birthdate"
+                  type="date"
+                  placeholder="Birthdate"
+                />
               </div>
+            </div>
 
-              <div class="form-group pt3">
-                <div class="input-field">
-                  <span class="fa fa-user p-2"></span>
-                  <input type="text" placeholder="Email" />
-                </div>
+            <div class="form-group pt3">
+              <div class="input-field">
+                <span class="fa fa-user p-2"></span>
+                <!-- Email -->
+                <input [(ngModel)]="email" type="text" placeholder="Email" />
               </div>
+            </div>
 
-              <div class="form-group pt3">
-                <div class="input-field">
-                  <span class="fa fa-lock p-2"></span>
-                  <input [type]="type" placeholder="Password" />
-                  <span
-                    (click)="hideShowPass()"
-                    class="fa {{ eyeIcon }}"
-                  ></span>
-                </div>
+            <div class="form-group pt3">
+              <div class="input-field">
+                <span class="fa fa-lock p-2"></span>
+                <input
+                  [type]="type"
+                  [(ngModel)]="password"
+                  placeholder="Password"
+                />
+                <span (click)="hideShowPass()" class="fa {{ eyeIcon }}"></span>
               </div>
+            </div>
 
-              <div class="form-group pt3">
-                <div class="input-field">
-                  <span class="fa fa-lock p-2"></span>
-                  <input [type]="type" placeholder="Confirm Password" />
-                  <span
-                    (click)="hideShowPass()"
-                    class="fa {{ eyeIcon }}"
-                  ></span>
-                </div>
+            <div class="form-group pt3">
+              <div class="input-field">
+                <span class="fa fa-lock p-2"></span>
+                <input
+                  [type]="type"
+                  [(ngModel)]="cpassword"
+                  placeholder="Confirm Password"
+                />
+                <span (click)="hideShowPass()" class="fa {{ eyeIcon }}"></span>
               </div>
-
-              <button
-                type="submit"
-                class="btn btn-primary btc-block mt-4 w-100%"
-              >
-                Sign up
-              </button>
-              <div class="text-center pt-4 text-muted">
-                already have a <a id="forgot" routerLink="/login">login?</a>
-              </div>
-            </form>
+            </div>
+            <!-- Sign up Button -->
+            <button
+              (click)="signup()"
+              type="submit"
+              class="btn btn-primary btc-block mt-4 w-100%"
+            >
+              Sign up
+            </button>
+            <div class="text-center pt-4 text-muted">
+              already have a <a id="forgot" routerLink="/login">login?</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<p>test</p>
