@@ -40,6 +40,7 @@ Route::post('/users', function (Request $request) {
     $password = $request->input('password');
     $email = $request->input('email');
     $birthdate = $request->input('birthdate');
+    $createdAt = $request->input('createdAt');
 
     if (DB::table('users')->where('name', $name)->exists()) {
         return response()->json([
@@ -51,7 +52,8 @@ Route::post('/users', function (Request $request) {
         'name' => $name,
         'password' => Hash::make($password),
         'email' => $email,
-        'birthdate' => $birthdate
+        'birthdate' => $birthdate,
+        'createdAt' => $createdAt
     ]);
 
     return response()->json([

@@ -19,6 +19,13 @@ export class SignupComponent implements OnInit {
   password!: string;
   cpassword!: string;
   birthdate!: Date;
+  createdAt!: Date;
+
+  date = new Date();
+  day = this.date.getDate();
+  month = this.date.getMonth() + 1;
+  year = this.date.getFullYear();
+  currentDate = `${this.year}-${this.month}-${this.day}`;
 
   hideShowPass() {
     this.isText = !this.isText;
@@ -35,6 +42,7 @@ export class SignupComponent implements OnInit {
       email: this.email,
       password: this.password,
       birthdate: this.birthdate,
+      createdAt: this.currentDate,
     };
     console.log(newUser);
 
