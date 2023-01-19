@@ -24,16 +24,37 @@ Route::get('/users', function () {
 });
 
 // Add user to database 
+
+// Route::post('/users', function (Request $request) {
+//     $user = DB::table('users')->insert([
+//         'name' => $request->name,
+//         'email' => $request->email,
+//         'password' =>$request->password,
+//         'birthdate' =>$request->birthdate 
+//     ]);
+//     return $user;
+// });
+
 Route::post('/users', function (Request $request) {
-    $user = DB::table('users')->insert([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' =>$request->password,
-        // 'password' => Hash::make($password)
-        'birthdate' =>$request->birthdate
+    $name = $request->input('name');
+    $password = $request->input('password');
+    $email = $request->input('email');
+    $birthdate = $request->input('birthdate');
 
-        
+    if (DB::table('users')->where('name', $name)->exists()) {
+        return response()->json([
+            'message' => 'User already exists'
+        ], 409);
+    }
+
+    DB::table('users')->insert([
+        'name' => $name,
+        'password' => Hash::make($password),
+        'email' => $email,
+        'birthdate' => $birthdate
     ]);
-    return $user;
-});
 
+    return response()->json([
+        'message' => 'User created'
+    ], 201);
+});

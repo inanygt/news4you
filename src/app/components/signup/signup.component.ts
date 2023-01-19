@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
 
   signup() {
     const newUser = {
-      id: this.users.length + 1,
+      // id: this.users.length + 1,
       name: this.username,
       email: this.email,
       password: this.password,
