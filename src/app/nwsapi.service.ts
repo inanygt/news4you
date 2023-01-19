@@ -14,4 +14,14 @@ export class NwsapiService {
       .then((res) => res.json())
       .then((data) => console.log(data));
   }
+
+  adduser(newUser: any) {
+    fetch(this.url + 'users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newUser),
+    });
+  }
 }
