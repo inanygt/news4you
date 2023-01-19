@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
 
   email!: string;
   password!: string;
-  date!: Date;
 
   hideShowPass() {
     this.isText = !this.isText;
