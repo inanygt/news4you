@@ -29,6 +29,9 @@ Route::post('/users', function (Request $request) {
         'name' => $request->name,
         'email' => $request->email,
         'password' =>$request->password
+        // 'password' => Hash::make($password)
+
+        
     ]);
     return $user;
 });
