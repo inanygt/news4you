@@ -28,8 +28,9 @@ Route::post('/users', function (Request $request) {
     $user = DB::table('users')->insert([
         'name' => $request->name,
         'email' => $request->email,
-        'password' =>$request->password
+        'password' =>$request->password,
         // 'password' => Hash::make($password)
+        'birthdate' =>$request->birthdate
 
         
     ]);

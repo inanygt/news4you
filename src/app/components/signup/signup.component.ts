@@ -34,6 +34,7 @@ export class SignupComponent implements OnInit {
       name: this.username,
       email: this.email,
       password: this.password,
+      birthdate: this.birthdate,
     };
     console.log(newUser);
 
