@@ -32,6 +32,7 @@ Route::get('/users/{userName}', function ($userName) {
             'message' => 'User not found'
         ], 404);
     }
+
     // return DB::table('users')->where('userName', $userName)->first();
     // do the same but with plain sql
     return DB::select('select * from users where userName = ?', [$userName]);

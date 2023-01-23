@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NwsapiService } from 'src/app/nwsapi.service';
 import { Users } from 'src/app/users';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -33,9 +34,17 @@ export class SignupComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   }
 
-  constructor(private NwsapiService: NwsapiService) {}
+  constructor(
+    private NwsapiService: NwsapiService,
+    private toastr: ToastrService
+  ) {}
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
+  }
 
   signup() {
+    this.showSuccess();
     const newUser = {
       // id: this.users.length + 1,
       userName: this.userName,

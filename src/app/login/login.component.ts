@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NwsapiService } from '../nwsapi.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +12,16 @@ export class LoginComponent implements OnInit {
   isText: boolean = false;
   eyeIcon: string = 'fa-eye-slash';
 
+  userExists: boolean = false;
+
   email!: string;
   userName!: string;
   password!: string;
 
-  constructor(private NwsapiService: NwsapiService) {}
+  constructor(
+    private NwsapiService: NwsapiService,
+    private toastr: ToastrService
+  ) {}
 
   hideShowPass() {
     this.isText = !this.isText;
@@ -23,19 +29,19 @@ export class LoginComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   }
 
-  // loginbtn() {
-  //   const newLogin = {
-  //     email: this.email,
-  //     password: this.password,
-  //   };
-  //   console.log(newLogin);
-  //   // this.NwsapiService.checkuser();
-  // }
-
   loginbtn() {
+    this.showSuccess();
     console.log(this.userName);
     console.log(this.password);
-    this.NwsapiService.checkuser(this.userName);
+    this.NwsapiService.checkuser(this.userName)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   ngOnInit(): void {}

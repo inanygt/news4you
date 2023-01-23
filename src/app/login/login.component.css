@@ -8,6 +8,11 @@
   margin: 2em;
 }
 
+#noUser {
+  color: red;
+  margin-left: 1.5rem;
+}
+
 .container {
   max-width: 500px;
 }
