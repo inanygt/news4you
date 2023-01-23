@@ -25,39 +25,41 @@ Route::get('/users', function () {
 
 
 // Get user login
-Route::get('/users/{name}', function ($name) {
+Route::get('/users/{userName}', function ($userName) {
     
-    if (!DB::table('users')->where('name', $name)->exists()) {
+    if (!DB::table('users')->where('userName', $userName)->exists()) {
         return response()->json([
             'message' => 'User not found'
         ], 404);
     }
-    // return DB::table('users')->where('name', $name)->first();
+    // return DB::table('users')->where('userName', $userName)->first();
     // do the same but with plain sql
-    return DB::select('select * from users where name = ?', [$name]);
+    return DB::select('select * from users where userName = ?', [$userName]);
 
 });
 
 // Add user to database 
 Route::post('/users', function (Request $request) {
-    $name = $request->input('name');
+    $userName = $request->input('userName');
     $password = $request->input('password');
     $email = $request->input('email');
     $birthdate = $request->input('birthdate');
     $createdAt = $request->input('createdAt');
+    $rememberToken = $request->input('rememberToken');
 
-    if (DB::table('users')->where('name', $name)->exists()) {
+    if (DB::table('users')->where('userName', $userName)->exists()) {
         return response()->json([
             'message' => 'User already exists'
         ], 409);
     }
 
     DB::table('users')->insert([
-        'name' => $name,
+        'userName' => $userName,
         'password' => Hash::make($password),
         'email' => $email,
         'birthdate' => $birthdate,
-        'createdAt' => $createdAt
+        'createdAt' => $createdAt,
+        'rememberToken' => $rememberToken
     ]);
 
     return response()->json([

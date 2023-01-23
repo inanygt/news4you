@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NwsapiService } from '../nwsapi.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,10 @@ export class LoginComponent implements OnInit {
   eyeIcon: string = 'fa-eye-slash';
 
   email!: string;
+  userName!: string;
   password!: string;
+
+  constructor(private NwsapiService: NwsapiService) {}
 
   hideShowPass() {
     this.isText = !this.isText;
@@ -19,12 +23,19 @@ export class LoginComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   }
 
+  // loginbtn() {
+  //   const newLogin = {
+  //     email: this.email,
+  //     password: this.password,
+  //   };
+  //   console.log(newLogin);
+  //   // this.NwsapiService.checkuser();
+  // }
+
   loginbtn() {
-    const newLogin = {
-      email: this.email,
-      password: this.password,
-    };
-    console.log(newLogin);
+    console.log(this.userName);
+    console.log(this.password);
+    this.NwsapiService.checkuser(this.userName);
   }
 
   ngOnInit(): void {}

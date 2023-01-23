@@ -15,6 +15,14 @@ export class NwsapiService {
       .then((data) => console.log(data));
   }
 
+  // Get user at login
+  checkuser(userName: string) {
+    return fetch(this.url + 'users/' + userName)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
+
+  // add user at signup
   adduser(newUser: any) {
     fetch(this.url + 'users', {
       method: 'POST',

@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
 
   users: Users[] = [];
 
-  username!: string;
+  userName!: string;
   email!: string;
   password!: string;
   cpassword!: string;
@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
   signup() {
     const newUser = {
       // id: this.users.length + 1,
-      name: this.username,
+      userName: this.userName,
       email: this.email,
       password: this.password,
       birthdate: this.birthdate,

@@ -14,12 +14,18 @@
             <div class="form-group pt3">
               <div class="input-field">
                 <span class="fa fa-user p-2"></span>
-                <input type="text" placeholder="Email" [(ngModel)]="email" />
+                <!-- input email at login -->
+                <input
+                  type="text"
+                  placeholder="Username"
+                  [(ngModel)]="userName"
+                />
               </div>
             </div>
             <div class="form-group pt3">
               <div class="input-field">
                 <span class="fa fa-lock p-2"></span>
+                <!-- input password at login -->
                 <input
                   [type]="type"
                   placeholder="Password"
