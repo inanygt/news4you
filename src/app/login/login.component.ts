@@ -30,18 +30,22 @@ export class LoginComponent implements OnInit {
   }
 
   loginbtn() {
-    this.showSuccess();
+    // this.toastr.warning('wrong password');
+
     console.log(this.userName);
     console.log(this.password);
     this.NwsapiService.checkuser(this.userName)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          this.toastr.warning('wrong password');
+        } else {
+          res.json();
+        }
+      })
       .then((data) => {
         console.log(data);
-      });
-  }
-
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+      })
+      .catch((err) => console.log(err));
   }
 
   ngOnInit(): void {}

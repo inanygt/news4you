@@ -44,9 +44,7 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    this.showSuccess();
     const newUser = {
-      // id: this.users.length + 1,
       userName: this.userName,
       email: this.email,
       password: this.password,
@@ -54,8 +52,6 @@ export class SignupComponent implements OnInit {
       createdAt: this.currentDate,
     };
     console.log(newUser);
-
-    //
     this.NwsapiService.adduser(newUser);
   }
 

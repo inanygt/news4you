@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NwsapiService {
-  constructor() {}
+  constructor(private toastr: ToastrService) {}
 
   url = 'http://localhost:8000/api/';
 
@@ -28,6 +29,15 @@ export class NwsapiService {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(newUser),
+    }).then((res) => {
+      if (res.status == 201) {
+        this.toastr.success('user succesfully created');
+      }
+      if (res.status == 500) {
+        this.toastr.warning('username already exists');
+      } else {
+        this.toastr.warning('Something went wrong');
+      }
     });
   }
 }
