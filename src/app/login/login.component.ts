@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   loginbtn() {
     // this.toastr.warning('wrong password');
-
+    console.log('test');
     console.log(this.userName);
     console.log(this.password);
     this.NwsapiService.checkuser(this.userName)
