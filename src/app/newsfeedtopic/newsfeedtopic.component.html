@@ -1,1 +1,24 @@
-<p>newsfeedtopic works!</p>
+<!-- <form>
+  <input type="text" id="keyword" placeholder="Enter your search term">
+  <button type="submit" (click)="search()">Search</button>
+</form> -->
+
+
+<input [(ngModel)]="searchTerm" type="text">
+<button (click)="search()">Search</button>
+
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let searchData of searchData">
+
+      <div class="row">
+          <div class="col-10">
+              <span class="title">{{searchData.title}}</span>
+
+              <div class="">{{searchData.description}}</div>
+              <div class=""><img src="{{searchData.urlToImage}}" alt=""></div>
+              <div><a href="{{searchData.url}}">Link</a></div>
+          </div>
+
+      </div>
+  </li>
