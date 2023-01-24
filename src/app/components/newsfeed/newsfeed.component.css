@@ -1,0 +1,15 @@
+div {
+  max-height: fit-content;
+  margin: 20px;
+  border: 2px;
+  padding: 5px;
+}
+
+img {
+  max-height: 200px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: large;
+}
