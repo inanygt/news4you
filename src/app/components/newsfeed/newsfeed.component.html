@@ -1,13 +1,17 @@
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let newdata of newdata">
-    <div class="row">
-      <div class="col-10">
-        <span class="title">{{ newdata.title }}</span>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let newdata of newdata">
+      <h2>{{ newdata.title }}</h2>
 
-        <div class="">{{ newdata.description }}</div>
-        <div class=""><img src="{{ newdata.urlToImage }}" alt="" /></div>
-        <div><a href="{{ newdata.url }}">Link</a></div>
+      <div class="description">{{ newdata.description }}</div>
+
+      <img src="{{ newdata.urlToImage }}" alt="" />
+      <div id="read-more">
+        <a href="{{ newdata.url }}"
+          >Read more <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
+2
