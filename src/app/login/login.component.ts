@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   eyeIcon: string = 'fa-eye-slash';
 
   userExists: boolean = false;
-
   email!: string;
   userName!: string;
   password!: string;
@@ -30,22 +29,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginbtn() {
-    // this.toastr.warning('wrong password');
-    console.log('test');
     console.log(this.userName);
     console.log(this.password);
-    this.NwsapiService.checkuser(this.userName)
-      .then((res) => {
-        if (!res.ok) {
-          this.toastr.warning('wrong password');
-        } else {
-          res.json();
-        }
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
+    this.NwsapiService.checkuser(this.userName, this.password);
   }
 
   ngOnInit(): void {}
