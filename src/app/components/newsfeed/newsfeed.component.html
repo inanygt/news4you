@@ -1,14 +1,19 @@
 <div class="container">
-  <div class="row">
+  <div class="row gx-4">
     <div class="col-lg-6" *ngFor="let newdata of newdata">
       <h2>{{ newdata.title }}</h2>
       <div class="description">{{ newdata.description }}</div>
       <img src="{{ newdata.urlToImage }}" alt="" />
       <!-- link read more -->
-      <div id="read-more">
-        <a href="{{ newdata.url }}" target="_blank"
-          >Read more <i class="fa-solid fa-arrow-right"></i>
-        </a>
+      <div class="d-flex justify-content-between">
+        <div id="read-more">
+          <a href="{{ newdata.url }}" target="_blank"
+            >Read more <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div id="bookmark" (click)="bookmarkMe()">
+          <i class="fa-regular fa-bookmark"></i>
+        </div>
       </div>
       <hr />
     </div>

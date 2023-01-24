@@ -27,8 +27,14 @@ h2 {
 }
 
 #read-more {
-  padding-top: 0.6rem;
-  padding-bottom: 0.8rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+#bookmark {
+  padding-top: 0.5rem;
+
+  padding-right: 1rem;
 }
 
 a {

@@ -11,6 +11,10 @@ export class NewsfeedComponent implements OnInit {
 
   constructor(private NewsApiService: NewsApiService) {}
 
+  bookmarkMe() {
+    console.log('succes');
+  }
+
   ngOnInit(): void {
     this.NewsApiService.getData().then((data: any) => {
       console.log((this.newdata = data.articles));
