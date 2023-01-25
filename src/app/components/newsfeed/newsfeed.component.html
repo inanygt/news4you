@@ -1,6 +1,7 @@
-<div class="container">
-  <div class="row gx-4">
+<div class="container pt-5">
+  <div class="row gx-5">
     <div class="col-lg-6" *ngFor="let newdata of newdata">
+      <div id="categories">#{{ newdata.source.name }}</div>
       <h2>{{ newdata.title }}</h2>
       <div class="description">{{ newdata.description }}</div>
       <img src="{{ newdata.urlToImage }}" alt="" />
