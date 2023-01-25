@@ -10,8 +10,7 @@
   text-align: center;
   margin-bottom: 10px;
 }
-.input-field {
-}
+
 #forget {
   min-width: 100px;
   margin-left: auto;
@@ -68,10 +67,10 @@ input[type="password"] {
   box-shadow: none;
 }
 
-img {
+/* img {
   width: 40px;
   height: 40px;
   object-fit: cover;
   border-radius: 50%;
   position: relative;
-}
+} */

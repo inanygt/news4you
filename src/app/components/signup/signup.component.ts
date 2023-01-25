@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NwsapiService } from 'src/app/nwsapi.service';
+import { NwsapiService } from 'src/app/Services/nwsapi.service';
+
 import { Users } from 'src/app/users';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -14,11 +16,18 @@ export class SignupComponent implements OnInit {
 
   users: Users[] = [];
 
-  username!: string;
+  userName!: string;
   email!: string;
   password!: string;
   cpassword!: string;
   birthdate!: Date;
+  createdAt!: Date;
+
+  date = new Date();
+  day = this.date.getDate();
+  month = this.date.getMonth() + 1;
+  year = this.date.getFullYear();
+  currentDate = `${this.year}-${this.month}-${this.day}`;
 
   hideShowPass() {
     this.isText = !this.isText;
@@ -26,18 +35,24 @@ export class SignupComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   }
 
-  constructor(private NwsapiService: NwsapiService) {}
+  constructor(
+    private NwsapiService: NwsapiService,
+    private toastr: ToastrService
+  ) {}
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
+  }
 
   signup() {
     const newUser = {
-      id: this.users.length + 1,
-      name: this.username,
+      userName: this.userName,
       email: this.email,
       password: this.password,
+      birthdate: this.birthdate,
+      createdAt: this.currentDate,
     };
     console.log(newUser);
-
-    //
     this.NwsapiService.adduser(newUser);
   }
 
