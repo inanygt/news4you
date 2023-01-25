@@ -12,3 +12,8 @@
 
 /* Toast Css */
 @import "ngx-toastr/toastr";
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
