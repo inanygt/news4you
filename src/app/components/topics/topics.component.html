@@ -11,16 +11,19 @@
             />
           </div>
           <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
-            <div *ngFor="let data of Data; let i=index">
+            <div class="row">
+            <div class="col-6" *ngFor="let data of Data; let i=index">
               <label>
                 <input type="checkbox" [value]="data.value" (change)="onCheckboxChange($event)" />
                 {{data.name}}
               </label>
+
             </div>
             <!-- <p class="error" *ngIf="this.form.controls['checkArray'].errors?.['required']">
             U can add multiple checkboxes
             </p> -->
             <input type="submit" value="Submit">
+          </div>
           </form>
 
           </div>
