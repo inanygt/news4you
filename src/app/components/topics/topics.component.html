@@ -1,25 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="col"></div>
-    <h1>Select your favorite topics</h1>
-    <p>
-      Select some of your favorite topics to let us suggest better news for you.
-    </p>
-  </div>
-  <!-- Topics -->
-  <div class="row">
-    <div class="col">
-      <div class="card text-center">
-        <div class="card-header">Featured</div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">2 days ago</div>
+<div class="outer">
+  <div class="container">
+    <div class="row">
+      <div class="offset-md2 col-lg5 col md-7 offset-lg4 offset-md3">
+        <div class="panel border bg-white">
+          <div class="panel-heading">
+            <img
+              src="../assets/img/Logo_nws4You2.png"
+              id="logonws"
+              alt="logonws_logo"
+            />
+          </div>
+          <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+            <div *ngFor="let data of Data; let i=index">
+              <label>
+                <input type="checkbox" [value]="data.value" (change)="onCheckboxChange($event)" />
+                {{data.name}}
+              </label>
+            </div>
+            <!-- <p class="error" *ngIf="this.form.controls['checkArray'].errors?.['required']">
+            U can add multiple checkboxes
+            </p> -->
+            <input type="submit" value="Submit">
+          </form>
+
+          </div>
       </div>
     </div>
   </div>
