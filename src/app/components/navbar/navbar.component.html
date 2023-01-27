@@ -1,5 +1,22 @@
 <nav class="navbar p-3 navbar-expand-lg navbar-light bg-light">
-  <div id="profilenavbar"></div>
+  <!-- Dropdown -->
+
+  <div class="dropdown">
+    <button
+      id="profilenavbar"
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    ></button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Log in</a></li>
+      <li><a class="dropdown-item" href="#">Log out</a></li>
+      <li><a class="dropdown-item" href="#">Sign up!</a></li>
+      <li><a class="dropdown-item" href="#">Dark mode</a></li>
+    </ul>
+  </div>
+
   <div id="logonavbar">
     <a class="navbar-brand" routerLink="newsFeed">
       <img
