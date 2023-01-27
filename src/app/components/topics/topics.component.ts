@@ -18,7 +18,8 @@ export class TopicsComponent {
     { name: 'Financial', value: 'financial' },
     { name: 'Crypto', value: 'crypto' },
     { name: 'Tech', value: 'tech'},
-    { name: 'Science', value: 'science'}
+    { name: 'Science', value: 'science'},
+    { name: 'Health', value: 'health'}
   ];
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
