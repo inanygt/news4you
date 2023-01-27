@@ -17,6 +17,7 @@ import { NewsfeedtopicComponent } from '././components/newsfeedtopic/newsfeedtop
 import { TopicsComponent } from '././components/topics/topics.component';
 import { HomeComponent } from '././components/home/home.component';
 import { SignupComponent } from '././components/signup/signup.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const appRoutes: Routes = [
   // { path: '', component: NewsfeedComponent },
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     TopicsComponent,
     HomeComponent,
     SignupComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

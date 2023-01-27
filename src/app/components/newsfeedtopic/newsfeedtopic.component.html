@@ -5,6 +5,7 @@
   <li class="list-group-item" *ngFor="let searchData of searchData">
     <div class="row">
       <div class="col-10">
+        {{ searchData.source.name }}
         <span class="title">{{ searchData.title }}</span>
 
         <div class="">{{ searchData.description }}</div>

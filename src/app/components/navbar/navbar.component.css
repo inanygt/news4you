@@ -1,0 +1,29 @@
+#logonws {
+  width: 4rem;
+}
+
+#profilenavbar {
+  background: lightblue;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+#logonavbar {
+  margin: auto;
+}
+
+/* .navbar {
+  margin-bottom: 2rem;
+} */
+
+.nav-item {
+  padding-right: 1rem;
+  display: inline-block;
+}
+
+.navbar-nav {
+  margin-top: 1rem;
+  display: inline-block;
+  margin: auto;
+}

@@ -1,0 +1,65 @@
+openapi: 3.1.3
+info:
+  version: 1.0.0
+  title: Example API
+  description: This is an example API for demonstration purposes
+  contact:
+    name: OpenAI
+    email: info@openai.com
+    url: https://openai.com
+servers:
+  - url: https://example.com/api
+paths:
+  /users:
+    get:
+      summary: Retrieve a list of users
+      operationId: listUsers
+      responses:
+        200:
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+    post:
+      summary: Create a new user
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewUser"
+      responses:
+        201:
+          description: The newly created user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+    NewUser:
+      type: object
+      required:
+        - name
+        - email
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email

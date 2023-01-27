@@ -1,0 +1,35 @@
+<nav class="navbar p-3 navbar-expand-lg navbar-light bg-light">
+  <div id="profilenavbar"></div>
+  <div id="logonavbar">
+    <a class="navbar-brand" routerLink="newsFeed">
+      <img
+        src="../assets/img/Logo_nws4You2.png"
+        alt="logoNews4You"
+        id="logonws"
+      />
+    </a>
+  </div>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="global">Global</a>
+      <a class="nav-item nav-link" routerLink="personal">Personal</a>
+      <a class="nav-item nav-link" routerLink="topic">Topic</a>
+      <a class="nav-item nav-link" routerLink="login">login</a>
+      <a class="nav-item nav-link" routerLink="signup">sign up</a>
+      <div class="btn btn-dark btn-sm" (click)="toggleDarkMode()">
+        Dark mode
+      </div>
+    </div>
+  </div>
+</nav>
