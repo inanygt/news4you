@@ -60,9 +60,7 @@ a:hover {
 }
 
 
-.col-6 {
 
-}
 
 form{
   margin: 2rem;
@@ -70,12 +68,15 @@ form{
 
 .boxes{
   margin: 10px;
+
+
+
 }
 
 .subbutton{
   margin-top: 10px;
 
-  background-color: #6e6ef6;
+
 
 }
 
