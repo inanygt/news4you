@@ -29,6 +29,8 @@ export class NewsfeedtopicComponent implements OnInit {
     });
   }
 
+  bookmarkMe() {}
+
   constructor(private NewsApiService: NewsApiService) {}
 
   ngOnInit(): void {}
