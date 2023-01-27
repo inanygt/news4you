@@ -25,7 +25,7 @@ export class NewsApiService {
 
   searchData: any[] = [];
 
-  search() {}
+  // search() {}
 
   getSearch() {
     return fetch(this.searchLink).then((res) => res.json());
