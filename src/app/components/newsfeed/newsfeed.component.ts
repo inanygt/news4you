@@ -17,8 +17,7 @@ export class NewsfeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.NewsApiService.getData().then((data: any) => {
-      console.log((this.newdata = data.articles));
-      console.log(this.newdata);
+      console.log(data);
     });
   }
 }

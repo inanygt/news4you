@@ -10,10 +10,15 @@
       aria-expanded="false"
     ></button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Log in</a></li>
+      <li><a class="dropdown-item" href="#">Profile</a></li>
       <li><a class="dropdown-item" href="#">Log out</a></li>
+      <li><a class="dropdown-item" href="#">Log in</a></li>
       <li><a class="dropdown-item" href="#">Sign up!</a></li>
-      <li><a class="dropdown-item" href="#">Dark mode</a></li>
+      <li>
+        <a (click)="toggleDarkMode()" class="dropdown-item" href="#"
+          >Dark mode</a
+        >
+      </li>
     </ul>
   </div>
 
@@ -46,9 +51,9 @@
       ></a>
       <a class="nav-item nav-link" routerLink="login">login</a>
       <a class="nav-item nav-link" routerLink="signup">sign up</a>
-      <div class="btn btn-dark btn-sm" (click)="toggleDarkMode()">
+      <!-- <div class="btn btn-dark btn-sm" (click)="toggleDarkMode()">
         Dark mode
-      </div>
+      </div> -->
     </div>
   </div>
 </nav>

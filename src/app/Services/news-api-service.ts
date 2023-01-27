@@ -11,10 +11,14 @@ export class NewsApiService {
   url: string =
     'https://newsapi.org/v2/everything?q=keyword&apiKey=28708e155adf4043b69f678b8f7c75d9';
 
+  newsdataApi =
+    'https://newsdata.io/api/1/news?apikey=pub_1615436c42d2454a9e02ae00e9d51b6cb33e3&q=pegasus&language=en';
+
   newdata: any[] = [];
   constructor() {}
 
   getData() {
+    return fetch(this.newsdataApi).then((res) => res.json());
     return fetch(this.url).then((res) => res.json());
   }
 
