@@ -11,6 +11,7 @@ export class NewsApiService {
   url: string =
     'https://newsapi.org/v2/everything?q=keyword&apiKey=712dd0a6c8324f769ff3b97bd5590776';
 
+// voor meerdere topic calls urlapilink everything?q=bitcoin AND sports AND war&apiKey=.........
 
     //  inankey : 712dd0a6c8324f769ff3b97bd5590776
     // joriankey : 28708e155adf4043b69f678b8f7c75d9
