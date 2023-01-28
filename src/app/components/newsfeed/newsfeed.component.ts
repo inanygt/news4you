@@ -31,5 +31,7 @@ export class NewsfeedComponent implements OnInit {
           console.log(this.mergedApi);
         });
     });
+    // Test api
+    this.NewsApiService.testapi();
   }
 }
