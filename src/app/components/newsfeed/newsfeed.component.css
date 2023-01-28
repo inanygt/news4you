@@ -26,6 +26,17 @@ h2 {
   font-size: large;
 }
 
+.truncate {
+  /* white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%; */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
 #read-more {
   padding-top: 0.7rem;
   padding-bottom: 0.5rem;
