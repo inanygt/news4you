@@ -1,25 +1,83 @@
-<div class="container">
-  <div class="row">
-    <div class="col"></div>
-    <h1>Select your favorite topics</h1>
-    <p>
-      Select some of your favorite topics to let us suggest better news for you.
-    </p>
-  </div>
-  <!-- Topics -->
-  <div class="row">
-    <div class="col">
-      <div class="card text-center">
-        <div class="card-header">Featured</div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">2 days ago</div>
+<div class="outer">
+  <div class="container">
+    <div class="row">
+      <div class="offset-md2 col-lg5 col md-7 offset-lg4 offset-md3">
+        <div class="panel border bg-white">
+          <div class="panel-heading">
+            <img
+              src="../assets/img/Logo_nws4You2.png"
+              id="logonws"
+              alt="logonws_logo"
+            />
+          </div>
+          <form [formGroup]="form" (ngSubmit)="submitForm()">
+            <div class="row">
+            <div class="col-8">
+
+
+              <div class="container">
+                <div class="cat sports">
+                   <label>
+
+                      <input formControlName='Sports' type="checkbox"><span><i class="fa-solid fa-football"></i> Sports</span>
+                   </label>
+                </div>
+
+                <div class="cat politics">
+                   <label>
+                      <input formControlName='Politics' type="checkbox" ><span><i class="fa-regular fa-handshake"></i> Politics</span>
+                   </label>
+                </div>
+
+                <div class="cat war">
+                   <label>
+                      <input formControlName='War' type="checkbox" ><span><i class="fa-solid fa-person-rifle"></i> War</span>
+                   </label>
+                </div>
+
+                <div class="cat financial">
+                   <label>
+                      <input formControlName='Financial' type="checkbox" ><span><i class="fa-solid fa-coins"></i> Financial</span>
+                   </label>
+                </div>
+
+                <div class="cat crypto">
+                   <label>
+                      <input formControlName='Crypto' type="checkbox" ><span><i class="fa-brands fa-bitcoin"></i> Crypto</span>
+                   </label>
+                </div>
+
+                <div class="cat tech">
+                   <label>
+                      <input formControlName='Tech' type="checkbox" ><span><i class="fa-solid fa-microchip"></i> Tech</span>
+                   </label>
+                </div>
+
+                  <div class="cat science">
+                   <label>
+                      <input formControlName='Science' type="checkbox" ><span><i class="fa-solid fa-flask"></i> Science</span>
+                   </label>
+                </div>
+
+                  <div class="cat health">
+                   <label>
+                      <input formControlName='Health' type="checkbox" ><span><i class="fa-solid fa-heart"></i> Health</span>
+                   </label>
+                </div>
+
+                </div>
+
+
+
+            </div>
+
+            <input class="subbutton" type="submit" value="Submit">
+          </div>
+          </form>
+
+
+
+          </div>
       </div>
     </div>
   </div>

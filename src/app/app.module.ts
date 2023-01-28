@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { TopicsComponent } from '././components/topics/topics.component';
 import { HomeComponent } from '././components/home/home.component';
 import { SignupComponent } from '././components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProfileComponent } from './components/profile/profile/profile.component';
 
 const appRoutes: Routes = [
   // { path: '', component: NewsfeedComponent },
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'global', component: NewsfeedGlobalComponent },
   { path: 'personal', component: NewsfeedpersComponent },
   { path: 'topic', component: NewsfeedtopicComponent },
+  {path: 'topics', component: TopicsComponent}
 ];
 
 @NgModule({
@@ -43,6 +46,7 @@ const appRoutes: Routes = [
     HomeComponent,
     SignupComponent,
     NavbarComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(),// ToastrModule added
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

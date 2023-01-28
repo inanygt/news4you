@@ -9,8 +9,12 @@ import { NewsfeedtopicComponent } from '../components/newsfeedtopic/newsfeedtopi
 })
 export class NewsApiService {
   url: string =
-    'https://newsapi.org/v2/everything?q=keyword&apiKey=28708e155adf4043b69f678b8f7c75d9';
+    'https://newsapi.org/v2/everything?q=keyword&apiKey=712dd0a6c8324f769ff3b97bd5590776';
 
+// voor meerdere topic calls urlapilink everything?q=bitcoin AND sports AND war&apiKey=.........
+
+    //  inankey : 712dd0a6c8324f769ff3b97bd5590776
+    // joriankey : 28708e155adf4043b69f678b8f7c75d9
   newdata: any[] = [];
   constructor() {}
 
@@ -19,7 +23,7 @@ export class NewsApiService {
   }
 
   urlLink: string = 'https://newsapi.org/v2/everything?q=';
-  urlKey: string = '&apiKey=28708e155adf4043b69f678b8f7c75d9';
+  urlKey: string = '&apiKey=712dd0a6c8324f769ff3b97bd5590776';
   keyWord: string = '';
   searchLink: string = this.urlLink + this.keyWord + this.urlKey;
 
