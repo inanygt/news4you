@@ -9,40 +9,28 @@ import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@ang
 })
 
 
-export class TopicsComponent {
-  form: FormGroup;
-  Data: Array<any> = [
-    { name: 'Sports', value: 'sports' },
-    { name: 'Politics', value: 'politics' },
-    { name: 'War', value: 'war' },
-    { name: 'Financial', value: 'financial' },
-    { name: 'Crypto', value: 'crypto' },
-    { name: 'Tech', value: 'tech'},
-    { name: 'Science', value: 'science'},
-    { name: 'Health', value: 'health'}
-  ];
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      checkArray: this.fb.array([], [Validators.required]),
-    });
-  }
-  onCheckboxChange(e: any) {
-    const checkArray: FormArray = this.form.get('checkArray') as FormArray;
-    if (e.target.checked) {
-      checkArray.push(new FormControl(e.target.value));
-    } else {
-      let i: number = 0;
-      checkArray.controls.forEach((item: any) => {
-        if (item.value == e.target.value) {
-          checkArray.removeAt(i);
-          return;
-        }
-        i++;
-      });
-    }
-  }
+export class TopicsComponent{
+  form = new FormGroup({
+    Sports: new FormControl(false),
+    Politics: new FormControl(false),
+    War: new FormControl(false),
+    Financial: new FormControl(false),
+    Crypto: new FormControl(false),
+    Tech: new FormControl(false),
+    Science: new FormControl(false),
+    Health: new FormControl(false),
+    // other formControls here
+  });
+
+
   submitForm() {
-    console.log(this.form.value);
+    let selectedValues = Object.entries(this.form.value)
+      .filter(([key, value]) => value)
+      .map(([key, value]) => key);
+    console.log(selectedValues);
   }
+
+
+
 }
 

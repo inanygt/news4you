@@ -10,19 +10,72 @@
               alt="logonws_logo"
             />
           </div>
-          <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+          <form [formGroup]="form" (ngSubmit)="submitForm()">
             <div class="row">
-            <div class="col-6" *ngFor="let data of Data; let i=index">
-              <label class="boxes">
-                <input type="checkbox" [value]="data.value" (change)="onCheckboxChange($event)" />
-                {{data.name}}
-              </label>
+            <div class="col-8">
+
+
+              <div class="container">
+                <div class="cat sports">
+                   <label>
+
+                      <input formControlName='Sports' type="checkbox"><span><i class="fa-solid fa-football"></i> Sports</span>
+                   </label>
+                </div>
+
+                <div class="cat politics">
+                   <label>
+                      <input formControlName='Politics' type="checkbox" ><span><i class="fa-regular fa-handshake"></i> Politics</span>
+                   </label>
+                </div>
+
+                <div class="cat war">
+                   <label>
+                      <input formControlName='War' type="checkbox" ><span><i class="fa-solid fa-person-rifle"></i> War</span>
+                   </label>
+                </div>
+
+                <div class="cat financial">
+                   <label>
+                      <input formControlName='Financial' type="checkbox" ><span><i class="fa-solid fa-coins"></i> Financial</span>
+                   </label>
+                </div>
+
+                <div class="cat crypto">
+                   <label>
+                      <input formControlName='Crypto' type="checkbox" ><span><i class="fa-brands fa-bitcoin"></i> Crypto</span>
+                   </label>
+                </div>
+
+                <div class="cat tech">
+                   <label>
+                      <input formControlName='Tech' type="checkbox" ><span><i class="fa-solid fa-microchip"></i> Tech</span>
+                   </label>
+                </div>
+
+                  <div class="cat science">
+                   <label>
+                      <input formControlName='Science' type="checkbox" ><span><i class="fa-solid fa-flask"></i> Science</span>
+                   </label>
+                </div>
+
+                  <div class="cat health">
+                   <label>
+                      <input formControlName='Health' type="checkbox" ><span><i class="fa-solid fa-heart"></i> Health</span>
+                   </label>
+                </div>
+
+                </div>
+
+
 
             </div>
 
             <input class="subbutton" type="submit" value="Submit">
           </div>
           </form>
+
+
 
           </div>
       </div>
