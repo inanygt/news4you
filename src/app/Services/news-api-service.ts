@@ -18,37 +18,14 @@ export class NewsApiService {
   NewsCatcher =
     'https://api.newscatcherapi.com/v2/search?q=Apple&from=2021/12/15&countries=CA&page_size=1';
   // Api key newscatcher // O63rgiLppFPpEJbqaJoakfSZs8Fp2JzvRiX6g00AC54
-  theNewsApi =
-    'https://api.thenewsapi.com/v1/news/top?api_token=EEhf2bjsK9flsfYAOyHHndDSRz0D1uxjxVQTEeRY';
-  // The news api key = EEhf2bjsK9flsfYAOyHHndDSRz0D1uxjxVQTEeRY
+  perigon =
+    'https://api.goperigon.com/v1/all?apiKey=c65b566c-05d5-4d35-ae90-279bf8b3b213';
 
   newdata: any[] = [];
   constructor() {}
 
-  // testapi() {
-  //   return fetch(this.NewsCatcher, {
-  //     mode: 'cors',
-  //     headers: {
-  //       'x-api-key': 'O63rgiLppFPpEJbqaJoakfSZs8Fp2JzvRiX6g00AC54',
-  //       'User-Agent': 'My-App',
-  //       Accept: '*/*',
-  //     },
-  //   }).then((response) => response.json());
-  // }
-
-  testapi() {
-    fetch(this.theNewsApi)
-      .then((res) => res.json())
-      .then((data) => console.log(data.data));
-  }
-
   getData() {
-    // Merge 2 apis test
-
     return fetch(this.url).then((response) => response.json());
-
-    // return fetch(this.newsdataApi).then((res) => res.json());
-    // return fetch(this.url).then((res) => res.json());
   }
 
   urlLink: string = 'https://newsapi.org/v2/everything?q=';

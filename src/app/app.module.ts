@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -52,6 +53,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    NgxMasonryModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

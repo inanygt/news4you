@@ -2,14 +2,12 @@
   <div class="row gx-5">
     <div class="col-lg-6 col-xl-4" *ngFor="let mergedApi of mergedApi">
       <div class="box">
-        <!-- <div id="categories">#{{ newdata.source.name }}</div> -->
         <h2>{{ mergedApi.title }}</h2>
         <div class="description truncate">
           {{ mergedApi.description }} {{ mergedApi.content }}
         </div>
         <img src="{{ mergedApi.urlToImage }}" alt="" />
         <img src="{{ mergedApi.image_url }}" alt="" />
-        <!-- link read more -->
         <div class="d-flex justify-content-between">
           <div id="read-more">
             <a href="{{ mergedApi.url }}" target="_blank"
