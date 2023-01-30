@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { NewsApiService } from 'src/app/Services/news-api-service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-newsfeedtopic',
@@ -29,9 +29,44 @@ export class NewsfeedtopicComponent implements OnInit {
     });
   }
 
-  bookmarkMe() {}
+  url = 'http://localhost:8000/api/';
 
-  constructor(private NewsApiService: NewsApiService) {}
+  bookmarkMe(title: any, url: any) {
+    // Get user id from local storage
+    window.localStorage.getItem('userName');
+
+    // Bookmark object
+    let bookmarked = {
+      title: title,
+      url: url,
+      user_id: window.localStorage.getItem('userId'),
+    };
+    console.log(bookmarked);
+
+    // Toast pop up
+    this.toastr.success('Woohoo!', 'Bookmarked!');
+
+    // Add bookmark to database
+
+    fetch(this.url + 'bookmarks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bookmarked),
+    }).then((res) => {
+      if (res.status == 201) {
+        this.toastr.success('user succesfully created');
+      } else {
+        this.toastr.warning('Whoops', 'Something went wrong');
+      }
+    });
+  }
+
+  constructor(
+    private NewsApiService: NewsApiService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {}
 }

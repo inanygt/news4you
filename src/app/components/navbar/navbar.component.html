@@ -1,76 +1,70 @@
 <nav class="nav-wrapper navbar p-3 navbar-expand-lg navbar-light">
   <!-- Dropdown -->
-  <div class="element">
-    <div class="dropdown">
-      <button
-        id="profilenavbar"
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      ></button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
-        <li><a class="dropdown-item" href="#">Log out</a></li>
-        <li><a class="dropdown-item" routerLink="login">Log in</a></li>
-        <li><a class="dropdown-item" routerLink="signup">Sign up!</a></li>
-        <li>
-          <div id="darkSwitch" class="form-check form-switch">
-            <input
-              (click)="toggleDarkMode()"
-              class="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="flexSwitchCheckDefault"
-            />
-            <label class="form-check-label" for="flexSwitchCheckDefault"
-              >Dark mode</label
-            >
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="dropdown">
+    <button
+      id="profilenavbar"
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    ></button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
+      <li><a class="dropdown-item" href="#">Log out</a></li>
+      <li><a class="dropdown-item" routerLink="login">Log in</a></li>
+      <li><a class="dropdown-item" routerLink="signup">Sign up!</a></li>
+      <li>
+        <div id="darkSwitch" class="form-check form-switch">
+          <input
+            (click)="toggleDarkMode()"
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+          />
+          <label class="form-check-label" for="flexSwitchCheckDefault"
+            >Dark mode</label
+          >
+        </div>
+      </li>
+    </ul>
   </div>
   <!-- Logo news4you -->
-  <div class="element">
-    <div id="logonavbar">
-      <a class="navbar-brand" routerLink="newsFeed">
-        <img
-          src="../assets/img/Logo_nws4You2.png"
-          alt="logoNews4You"
-          id="logonws"
-        />
-      </a>
-    </div>
+  <div id="logonavbar">
+    <a class="navbar-brand" routerLink="newsFeed">
+      <img
+        src="../assets/img/Logo_nws4You2.png"
+        alt="logoNews4You"
+        id="logonws"
+      />
+    </a>
   </div>
-  <div class="element">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <!-- Nav bar -->
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="newsFeed"
-          ><i class="fa-solid fa-earth-americas"></i
-        ></a>
-        <a class="nav-item nav-link" routerLink="personal"
-          ><i class="fa-regular fa-user"></i
-        ></a>
-        <a class="nav-item nav-link" routerLink="topic"
-          ><i class="fa-solid fa-magnifying-glass"></i
-        ></a>
-        <a class="nav-item nav-link" routerLink="bookmarks"
-          ><i class="fa-regular fa-bookmark"></i
-        ></a>
-      </div>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <!-- Nav bar -->
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="newsFeed"
+        ><i class="fa-solid fa-earth-americas"></i
+      ></a>
+      <a class="nav-item nav-link" routerLink="personal"
+        ><i class="fa-regular fa-user"></i
+      ></a>
+      <a class="nav-item nav-link" routerLink="topic"
+        ><i class="fa-solid fa-magnifying-glass"></i
+      ></a>
+      <a class="nav-item nav-link" routerLink="bookmarks"
+        ><i class="fa-regular fa-bookmark"></i
+      ></a>
     </div>
   </div>
 </nav>

@@ -30,10 +30,23 @@ export class LoginComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   }
 
+  url = 'http://localhost:8000/api/';
+
   loginbtn() {
     console.log(this.userName);
     console.log(this.password);
+    localStorage.setItem('userName', this.userName);
+
     this.NwsapiService.checkuser(this.userName, this.password);
+
+    // Get user id
+    fetch(this.url + 'users/' + this.userName)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data[0].id);
+        window.localStorage.setItem('userId', data[0].id);
+        console.log(window.localStorage.getItem('userId'));
+      });
   }
 
   ngOnInit(): void {}

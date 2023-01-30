@@ -67,3 +67,31 @@ Route::post('/users', function (Request $request) {
         'message' => 'User created'
     ], 201);
 });
+
+// add bookmark to user
+
+// Add user to database 
+Route::post('/bookmarks', function (Request $request) {
+    $title = $request->input('title');
+    $url = $request->input('url');
+    $user_id = $request->input('user_id');
+    // $userName = $request->input('userName');
+    // $createdAt = $request->input('createdAt');
+
+    // if (DB::table('users')->where('userName', $userName)->exists()) {
+    //     return response()->json([
+    //         'message' => 'User already exists'
+    //     ], 409);
+    // }
+
+    DB::table('bookmarks')->insert([
+        'user_id' => $user_id,
+        'url' => $url,
+        'title' => $title,
+        // 'createdAt' => $createdAt,
+    ]);
+
+    // return response()->json([
+    //     'message' => 'User created'
+    // ], 201);
+});
