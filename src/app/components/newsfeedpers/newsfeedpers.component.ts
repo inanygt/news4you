@@ -6,18 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newsfeedpers.component.css'],
 })
 export class NewsfeedpersComponent implements OnInit {
-  bookmarks!: any;
-  url: string = 'http://localhost:8000/api/';
-
   constructor() {}
 
-  getBookmarks() {
-    fetch(this.url + 'bookmarks')
-      .then((res) => res.json())
-      .then((data) => console.log((this.bookmarks = data)));
-  }
-
-  ngOnInit(): void {
-    this.getBookmarks();
-  }
+  ngOnInit(): void {}
 }
