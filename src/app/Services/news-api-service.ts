@@ -21,6 +21,8 @@ export class NewsApiService {
   perigon =
     'https://api.goperigon.com/v1/all?apiKey=c65b566c-05d5-4d35-ae90-279bf8b3b213';
 
+  //  inankey : 712dd0a6c8324f769ff3b97bd5590776
+  // joriankey : 28708e155adf4043b69f678b8f7c75d9
   newdata: any[] = [];
   constructor() {}
 
@@ -29,7 +31,7 @@ export class NewsApiService {
   }
 
   urlLink: string = 'https://newsapi.org/v2/everything?q=';
-  urlKey: string = '&apiKey=28708e155adf4043b69f678b8f7c75d9';
+  urlKey: string = '&apiKey=712dd0a6c8324f769ff3b97bd5590776';
   keyWord: string = '';
   searchLink: string = this.urlLink + this.keyWord + this.urlKey;
   mergedData!: any;
