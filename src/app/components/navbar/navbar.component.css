@@ -9,6 +9,10 @@
   height: 2.5rem;
 }
 
+#darkSwitch {
+  margin-left: 1rem;
+}
+
 #logonavbar {
   margin: auto;
 }

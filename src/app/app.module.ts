@@ -31,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'personal', component: NewsfeedpersComponent },
   { path: 'topics', component: TopicsComponent },
   { path: 'topic', component: NewsfeedtopicComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({
