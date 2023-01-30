@@ -28,6 +28,11 @@ Route::get('/bookmarks', function () {
     return DB::table('bookmarks')->get(); 
 });
 
+// get bookmarks for specific user id
+Route::get('/bookmarks/{user_id}', function ($user_id) {
+return DB::table('bookmarks')->where('user_id', $user_id)->get();
+});
+
 
 // Get user login
 Route::get('/users/{userName}', function ($userName) {
@@ -70,7 +75,6 @@ Route::post('/users', function (Request $request) {
 });
 
 // add bookmark to user
-
 Route::post('/bookmarks', function (Request $request) {
     DB::table('bookmarks')->insert([
         'user_id' => $request->input('user_id'),
