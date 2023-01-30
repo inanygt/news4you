@@ -20,6 +20,7 @@ import { SignupComponent } from '././components/signup/signup.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
+import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 
 const appRoutes: Routes = [
   // { path: '', component: NewsfeedComponent },
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
   { path: 'topics', component: TopicsComponent },
   { path: 'topic', component: NewsfeedtopicComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'bookmarks', component: BookmarksComponent },
 ];
 
 @NgModule({
@@ -48,6 +50,7 @@ const appRoutes: Routes = [
     SignupComponent,
     NavbarComponent,
     ProfileComponent,
+    BookmarksComponent,
   ],
   imports: [
     BrowserModule,

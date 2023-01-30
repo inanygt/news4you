@@ -2,6 +2,13 @@
   width: 4rem;
 }
 
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 #profilenavbar {
   background: lightblue;
   border-radius: 50%;
@@ -13,9 +20,9 @@
   margin-left: 1rem;
 }
 
-#logonavbar {
+/* #logonavbar {
   margin: auto;
-}
+} */
 
 .nav-item {
   padding-right: 1rem;
