@@ -55,6 +55,15 @@ export class SignupComponent implements OnInit {
     this.NwsapiService.adduser(newUser);
   }
 
+  // Test topics
+
+  topicsObject = {
+    sports: false,
+    science: false,
+    tech: false,
+    crypto: false,
+  };
+
   ngOnInit(): void {}
 }
 

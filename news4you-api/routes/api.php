@@ -23,6 +23,11 @@ Route::get('/users', function () {
     return DB::table('users')->get(); 
 });
 
+// get all bookmarks 
+Route::get('/bookmarks', function () {
+    return DB::table('bookmarks')->get(); 
+});
+
 
 // Get user login
 Route::get('/users/{userName}', function ($userName) {
@@ -32,11 +37,7 @@ Route::get('/users/{userName}', function ($userName) {
             'message' => 'User not found'
         ], 404);
     }
-
-    // return DB::table('users')->where('userName', $userName)->first();
-    // do the same but with plain sql
     return DB::select('select * from users where userName = ?', [$userName]);
-
 });
 
 // Add user to database 
@@ -70,28 +71,11 @@ Route::post('/users', function (Request $request) {
 
 // add bookmark to user
 
-// Add user to database 
 Route::post('/bookmarks', function (Request $request) {
-    $title = $request->input('title');
-    $url = $request->input('url');
-    $user_id = $request->input('user_id');
-    // $userName = $request->input('userName');
-    // $createdAt = $request->input('createdAt');
-
-    // if (DB::table('users')->where('userName', $userName)->exists()) {
-    //     return response()->json([
-    //         'message' => 'User already exists'
-    //     ], 409);
-    // }
-
     DB::table('bookmarks')->insert([
-        'user_id' => $user_id,
-        'url' => $url,
-        'title' => $title,
+        'user_id' => $request->input('user_id'),
+        'url' => $request->input('url'),
+        'title' => $request->input('title'),
         // 'createdAt' => $createdAt,
     ]);
-
-    // return response()->json([
-    //     'message' => 'User created'
-    // ], 201);
 });
