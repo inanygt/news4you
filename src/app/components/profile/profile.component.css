@@ -1,0 +1,73 @@
+.outer {
+  height: 100vh;
+  background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%) no-repeat;
+}
+
+#logonws {
+  width: 5rem;
+  margin: 2em;
+}
+
+#noUser {
+  color: red;
+  margin-left: 1.5rem;
+}
+
+.container {
+  max-width: 1400px;
+  max-height: 1000px;
+}
+.panel-heading {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.input-field {
+  margin: 30px;
+  min-height: 300px;
+}
+.userinput {
+  margin: 30px;
+  border: 3px solid rgb(151, 151, 151);
+  border-radius: 10px;
+  padding: 20px;
+}
+.topics {
+  margin: 30px;
+  border: 3px solid rgb(151, 151, 151);
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.btn {
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+.panel {
+  min-height: 38px;
+  box-shadow: 20px 20px 80px rgb(218, 218, 218);
+  border-radius: 12px;
+  margin-top: 100px;
+}
+
+.input-field {
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  color: #000000;
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+
+.bordert {
+  border-top: 1px solid #aaa;
+  position: relative;
+}

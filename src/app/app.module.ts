@@ -19,7 +19,7 @@ import { HomeComponent } from '././components/home/home.component';
 import { SignupComponent } from '././components/signup/signup.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProfileComponent } from './components/profile/profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const appRoutes: Routes = [
   // { path: '', component: NewsfeedComponent },
@@ -31,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'personal', component: NewsfeedpersComponent },
   { path: 'topics', component: TopicsComponent },
   { path: 'topic', component: NewsfeedtopicComponent },
+  { path: 'profile', component: ProfileComponent},
 ];
 
 @NgModule({
