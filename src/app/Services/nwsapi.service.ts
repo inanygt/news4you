@@ -34,7 +34,7 @@ export class NwsapiService {
               window.localStorage.setItem('userId', data[0].id);
               this.toastr.success('logged in successfully');
               console.log('succes');
-              this.router.navigate(['/global']);
+              this.router.navigate(['/newsFeed']);
             } else {
               this.toastr.warning('Whoops', 'Something went wrong');
             }
