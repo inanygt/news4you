@@ -45,6 +45,7 @@ h2 {
 #bookmark {
   padding-top: 0.5rem;
   padding-right: 1rem;
+  cursor: pointer;
 }
 
 .readMore {

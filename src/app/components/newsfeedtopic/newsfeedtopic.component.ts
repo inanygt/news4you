@@ -54,12 +54,6 @@ export class NewsfeedtopicComponent implements OnInit {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(bookmarked),
-    }).then((res) => {
-      if (res.status == 201) {
-        this.toastr.success('user succesfully created');
-      } else {
-        this.toastr.warning('Whoops', 'Something went wrong');
-      }
     });
   }
 
