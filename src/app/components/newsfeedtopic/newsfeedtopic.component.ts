@@ -34,7 +34,6 @@ export class NewsfeedtopicComponent implements OnInit {
   bookmarkMe(title: any, url: any) {
     // Get user id from local storage
     window.localStorage.getItem('userName');
-
     // Bookmark object
     let bookmarked = {
       title: title,
@@ -42,12 +41,9 @@ export class NewsfeedtopicComponent implements OnInit {
       user_id: window.localStorage.getItem('userId'),
     };
     console.log(bookmarked);
-
     // Toast pop up
     this.toastr.success('Woohoo!', 'Bookmarked!');
-
     // Add bookmark to database
-
     fetch(this.url + 'bookmarks', {
       method: 'POST',
       headers: {
