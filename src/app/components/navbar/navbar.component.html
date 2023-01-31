@@ -1,5 +1,4 @@
 <!-- <nav class="nav-wrapper navbar p-3 navbar-expand-lg navbar-light bg-light">
-
   <div class="dropdown">
     <button
       id="profilenavbar"
@@ -51,7 +50,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
     <div class="navbar-nav">
       <a class="nav-item nav-link" routerLink="newsFeed"
         ><i class="fa-solid fa-earth-americas"></i
@@ -94,12 +92,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+        </li> -->
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -108,18 +104,53 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown
+            MyFeed
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" routerLink="signup">Home</a></li>
+            <a class="dropdown-item" routerLink="profile">bookmarks</a>
+            <li>
+              <a class="dropdown-item" routerLink="login">personalised</a>
+            </li>
           </ul>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li> -->
+
+        <!-- Account list items -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            <a class="dropdown-item" routerLink="profile">Profile</a>
+            <li><a class="dropdown-item" routerLink="login">Log in</a></li>
+            <li><a class="dropdown-item" routerLink="signup">Sign up!</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#" (click)="logout()">Log out</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <div id="darkSwitch" class="form-check form-switch">
+            <input
+              (click)="toggleDarkMode()"
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label class="form-check-label" for="flexSwitchCheckDefault"
+              >Dark mode</label
+            >
+          </div>
+        </li>
       </ul>
       <div class="d-flex" role="search">
         <input
