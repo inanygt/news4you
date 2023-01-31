@@ -1,5 +1,5 @@
-<nav class="nav-wrapper navbar p-3 navbar-expand-lg navbar-light bg-light">
-  <!-- Dropdown -->
+<!-- <nav class="nav-wrapper navbar p-3 navbar-expand-lg navbar-light bg-light">
+
   <div class="dropdown">
     <button
       id="profilenavbar"
@@ -29,7 +29,7 @@
       </li>
     </ul>
   </div>
-  <!-- Logo news4you -->
+
   <div id="logonavbar">
     <a class="navbar-brand" routerLink="newsFeed">
       <img
@@ -51,7 +51,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <!-- Nav bar -->
+
     <div class="navbar-nav">
       <a class="nav-item nav-link" routerLink="newsFeed"
         ><i class="fa-solid fa-earth-americas"></i
@@ -66,5 +66,123 @@
         ><i class="fa-regular fa-bookmark"></i
       ></a>
     </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <div id="logonavbar">
+      <a class="navbar-brand" routerLink="newsFeed">
+        <img
+          src="../assets/img/Logo_nws4You2.png"
+          alt="logoNews4You"
+          id="logonws"
+        />
+      </a>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> -->
+      </ul>
+      <div class="d-flex" role="search">
+        <input
+          [(ngModel)]="searchTerm"
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <div class="btn btn-primary" (click)="search()">Search</div>
+        <!-- <button
+          (click)="search()"
+          class="btn btn-outline-success"
+          type="submit"
+        >
+          Search
+        </button> -->
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row p-3 gx-5">
+    <div class="col-lg-6 col-xl-4" *ngFor="let searchData of searchData">
+      <div id="categories">#{{ searchData.source.name }}</div>
+      <h2>{{ searchData.title }}</h2>
+      <div class="description">{{ searchData.description }}</div>
+      <img src="{{ searchData.urlToImage }}" alt="" />
+      <!-- link read more -->
+      <div class="d-flex justify-content-between">
+        <div id="read-more">
+          <a href="{{ searchData.url }}" target="_blank"
+            >Read more <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div
+          id="bookmark"
+          (click)="bookmarkMe(searchData.title, searchData.url)"
+        >
+          <i class="fa-regular fa-bookmark"></i>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>
+
+<!-- Sticky footer -->
+<nav class="navbar fixed-bottom bg-body-tertiary">
+  <div class="container-fluid px-3">
+    <!-- <a class="navbar-brand" href="#">Fixed bottom</a> -->
+    <a class="nav-item nav-link" routerLink="newsFeed"
+      ><i class="fa-solid fa-earth-americas"></i
+    ></a>
+    <a class="nav-item nav-link" routerLink="personal"
+      ><i class="fa-regular fa-user"></i
+    ></a>
+    <a class="nav-item nav-link" routerLink="topic"
+      ><i class="fa-solid fa-magnifying-glass"></i
+    ></a>
+    <a class="nav-item nav-link" routerLink="bookmarks"
+      ><i class="fa-regular fa-bookmark"></i
+    ></a>
   </div>
 </nav>
