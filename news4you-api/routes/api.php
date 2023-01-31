@@ -23,17 +23,6 @@ Route::get('/users', function () {
     return DB::table('users')->get(); 
 });
 
-// get all bookmarks 
-Route::get('/bookmarks', function () {
-    return DB::table('bookmarks')->get(); 
-});
-
-// get bookmarks for specific user id
-Route::get('/bookmarks/{user_id}', function ($user_id) {
-return DB::table('bookmarks')->where('user_id', $user_id)->get();
-});
-
-
 // Get user login
 Route::get('/users/{userName}', function ($userName) {
     
@@ -74,12 +63,49 @@ Route::post('/users', function (Request $request) {
     ], 201);
 });
 
+// BOOKMARKS // BOOKMARKS // BOOKMARKS  // 
+
+// get all bookmarks 
+Route::get('/bookmarks', function () {
+    return DB::table('bookmarks')->get(); 
+});
+
+// get bookmarks for specific user id
+Route::get('/bookmarks/{user_id}', function ($user_id) {
+return DB::table('bookmarks')->where('user_id', $user_id)->get();
+});
+
+// Get bookmark id of specific user id
+Route::get('/bookmarks/{user_id}/{id}', function ($user_id, $id) {
+return DB::table('bookmarks')->where('user_id', $user_id)->where('id', $id)->first();
+});
+
 // add bookmark to user
 Route::post('/bookmarks', function (Request $request) {
     DB::table('bookmarks')->insert([
+
+        'id' => $request->input('id'),
         'user_id' => $request->input('user_id'),
         'url' => $request->input('url'),
         'title' => $request->input('title'),
         // 'createdAt' => $createdAt,
     ]);
+});
+
+// Delete bookmark
+Route::delete('/bookmarks/{user_id}/{id}', function ($user_id, $id) {
+    // if (!DB::table('bookmarks')->where('id', $id)->exists()) {
+    //     return response()->json([
+    //         'message' => 'Message not found'
+    //     ], 404);
+    // }
+
+    DB::table('bookmarks')
+    ->where('id', $id)
+    ->where('user_id', $user_id)
+    ->delete();
+
+    return response()->json([
+        'message' => 'Bookmark deleted'
+    ], 200);
 });
