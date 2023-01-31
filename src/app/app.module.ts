@@ -20,6 +20,7 @@ import { SignupComponent } from '././components/signup/signup.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
+
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 
 const appRoutes: Routes = [

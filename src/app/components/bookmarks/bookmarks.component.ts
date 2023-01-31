@@ -17,7 +17,22 @@ export class BookmarksComponent implements OnInit {
       .then((res) => res.json())
       .then((data) => {
         this.bookmarks = data;
+        console.log(this.bookmarks);
       });
+  }
+
+  deleteBm(id: number) {
+    let userId = localStorage.getItem('userId');
+    console.log(userId);
+    console.log(id);
+    fetch(this.url + 'bookmarks/' + userId + '/' + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => {
+      this.ngOnInit();
+    });
   }
 
   ngOnInit(): void {

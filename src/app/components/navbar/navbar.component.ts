@@ -10,4 +10,8 @@ export class NavbarComponent {
     var element = document.body;
     element.classList.toggle('dark-mode');
   }
+
+  logout() {
+    localStorage.removeItem('userId');
+  }
 }
