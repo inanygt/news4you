@@ -1,8 +1,12 @@
-<div class="container pt-5">
+<div class="container">
+  <div class="bookmark-title">
+    <h1>My bookmarks</h1>
+  </div>
+  <hr />
   <div class="row gx-5">
     <div class="col-lg-6 col-xl-4" *ngFor="let bookmark of bookmarks">
       <div class="box">
-        <h2>{{ bookmark.title }}</h2>
+        <h3>{{ bookmark.title }}</h3>
         <div class="description truncate">
           {{ bookmark.description }} {{ bookmark.content }}
         </div>
