@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
-
+import {
+  FormBuilder,
+  FormGroup,
+  FormArray,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-topics',
   templateUrl: './topics.component.html',
-  styleUrls: ['./topics.component.css']
+  styleUrls: ['./topics.component.css'],
 })
-
-
-export class TopicsComponent{
-    form = new FormGroup({
+export class TopicsComponent {
+  form = new FormGroup({
     Sports: new FormControl(false),
     Politics: new FormControl(false),
     War: new FormControl(false),
@@ -22,7 +25,6 @@ export class TopicsComponent{
     Health: new FormControl(false),
     // other formControls here
   });
-
 
   submitForm() {
     let selectedValues = Object.entries(this.form.value)
@@ -40,13 +42,5 @@ export class TopicsComponent{
     // console.log(storedValues);
 
     // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
-
-
   }
-
-
-
-
-
 }
-

@@ -17,9 +17,7 @@ import { NewsfeedtopicComponent } from '././components/newsfeedtopic/newsfeedtop
 import { TopicsComponent } from '././components/topics/topics.component';
 import { HomeComponent } from '././components/home/home.component';
 import { SignupComponent } from '././components/signup/signup.component';
-
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProfileComponent } from './components/profile/profile/profile.component';
 
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 
@@ -33,7 +31,7 @@ const appRoutes: Routes = [
   { path: 'personal', component: NewsfeedpersComponent },
   { path: 'topics', component: TopicsComponent },
   { path: 'topic', component: NewsfeedtopicComponent },
-  { path: 'profile', component: ProfileComponent },
+
   { path: 'bookmarks', component: BookmarksComponent },
 ];
 
@@ -50,7 +48,7 @@ const appRoutes: Routes = [
     HomeComponent,
     SignupComponent,
     NavbarComponent,
-    ProfileComponent,
+
     BookmarksComponent,
   ],
   imports: [
