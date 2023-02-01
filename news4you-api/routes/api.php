@@ -23,6 +23,11 @@ Route::get('/users', function () {
     return DB::table('users')->get(); 
 });
 
+// get all topics
+Route::get('/topics', function () {
+    return DB::table('topics')->get(); 
+});
+
 // Get user login
 Route::get('/users/{userName}', function ($userName) {
     
