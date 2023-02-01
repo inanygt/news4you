@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-newsfeed-global',
   templateUrl: './newsfeed-global.component.html',
@@ -8,3 +9,5 @@ import { Component } from '@angular/core';
 export class NewsfeedGlobalComponent {
 
 }
+
+
