@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-topics',
   templateUrl: './topics.component.html',
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@ang
 
 
 export class TopicsComponent{
-  form = new FormGroup({
+    form = new FormGroup({
     Sports: new FormControl(false),
     Politics: new FormControl(false),
     War: new FormControl(false),
@@ -28,7 +29,22 @@ export class TopicsComponent{
       .filter(([key, value]) => value)
       .map(([key, value]) => key);
     console.log(selectedValues);
+    // console.log(selectedValues[0])
+    // console.log(selectedValues[1])
+    // if (selectedValues !== null) {
+    //   localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
+    // }
+    // // var storedValues = JSON.parse(localStorage.getItem("selectedValues"));
+
+    // let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
+    // console.log(storedValues);
+
+    // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
+
+
   }
+
+
 
 
 
