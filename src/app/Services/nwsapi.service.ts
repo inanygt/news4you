@@ -41,6 +41,7 @@ export class NwsapiService {
           });
           console.log(data[0].password);
           console.log(data);
+          localStorage.setItem('user', JSON.stringify(data));
         })
         .catch((error) => {
           if (error.message === 'User not found')
@@ -61,6 +62,7 @@ export class NwsapiService {
     }).then((res) => {
       if (res.status == 201) {
         this.toastr.success('user succesfully created');
+        this.router.navigate(['/topics']);
       } else {
         this.toastr.warning('Whoops', 'Something went wrong');
       }

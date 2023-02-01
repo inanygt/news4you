@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
 import { NwsapiService } from 'src/app/Services/nwsapi.service';
-
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

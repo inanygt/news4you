@@ -1,4 +1,5 @@
 // DEPENDENCIES
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
@@ -18,8 +19,8 @@ import { TopicsComponent } from '././components/topics/topics.component';
 import { HomeComponent } from '././components/home/home.component';
 import { SignupComponent } from '././components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const appRoutes: Routes = [
   // { path: '', component: NewsfeedComponent },
@@ -31,8 +32,8 @@ const appRoutes: Routes = [
   { path: 'personal', component: NewsfeedpersComponent },
   { path: 'topics', component: TopicsComponent },
   { path: 'topic', component: NewsfeedtopicComponent },
-
   { path: 'bookmarks', component: BookmarksComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({

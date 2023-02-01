@@ -19,4 +19,4 @@ export class NewsfeedpersComponent {}
 
 let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
 console.log(storedValues);
-console.log(storedValues[2]);
+// console.log(storedValues[2]);
