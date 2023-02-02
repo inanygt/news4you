@@ -33,6 +33,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TopicsComponent } from '../topics/topics.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -51,10 +53,17 @@ export class ProfileComponent implements OnInit {
     health: false,
   };
 
+
+
   saveChecked() {
+
     localStorage.setItem('selectedTopics', JSON.stringify(this.selectedTopics));
     // TODO: Send the data to the database
+    console.log(this.selectedTopics)
   }
+
+
+
 
   user: any;
 

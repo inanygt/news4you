@@ -48,7 +48,7 @@
   width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .btn {
@@ -87,6 +87,55 @@
 div.row topic {
   width: 200px;
 }
+
+.cat{
+  margin: 4px;
+  background-color: #104068;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  overflow: hidden;
+  float: left;
+}
+
+.cat label {
+  float: left; line-height: 3.0em;
+  width: 8.0em; height: 3.0em;
+}
+
+.cat label span {
+  text-align: center;
+  padding: 3px 0;
+  display: block;
+}
+
+.cat label input {
+  position: absolute;
+  display: none;
+  color: #fff !important;
+}
+
+.cat label input + span{
+  color: #fff;
+}
+
+.cat input:checked + span {
+    color: #ffffff;
+    text-shadow: 0 0  6px rgba(0, 0, 0, 0.8);
+}
+
+.sports input:checked + span{background-color: #F75A1B;}
+.politics input:checked + span{background-color: #1BB8F7;}
+.war input:checked + span{background-color:#8C1B1B;}
+.financial input:checked + span{background-color: #82D44E;}
+.crypto input:checked + span{background-color: #F3A4CF;}
+.tech input:checked + span{background-color:  #D9D65D;}
+.science input:checked + span{background-color: #AC9BD1;}
+.health input:checked + span{background-color: #214A09;}
+
+label:hover {
+  cursor: pointer;
+}
+
 /*
 .outer {
   height: 100vh;
