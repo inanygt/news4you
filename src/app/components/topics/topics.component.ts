@@ -24,12 +24,16 @@ export class TopicsComponent implements OnInit {
     if (event.target.checked) {
       this.checkedTopics.push(event.target.value);
     } else {
-      // Filter if unchecked
-      this.checkedTopics.filter((m: number) => m != event.target.value);
+      // remove again if unchecked
+      this.checkedTopics.filter(
+        (number: number) => number != event.target.value
+      );
     }
   }
 
   onSubmit() {
+    let userId = localStorage.getItem('userId');
+    console.log(userId);
     console.log(this.checkedTopics);
   }
 

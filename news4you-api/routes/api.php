@@ -28,6 +28,18 @@ Route::get('/topics', function () {
     return DB::table('topics')->get(); 
 });
 
+// post topics of user id
+Route::post('/topics/{user_id}', function (Request $request) {
+    DB::table('topic_user')->insert([
+
+        // 'id' => $request->input('id'),
+        'user_id' => $request->input('user_id'),
+        'topic_id' => $request->input('topic_id'),
+
+    ]);
+});
+
+
 // Get user login
 Route::get('/users/{userName}', function ($userName) {
     
