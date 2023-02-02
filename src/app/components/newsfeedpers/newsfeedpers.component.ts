@@ -15,8 +15,55 @@ import { NewsApiService } from 'src/app/Services/news-api-service';
   templateUrl: './newsfeedpers.component.html',
   styleUrls: ['./newsfeedpers.component.css'],
 })
-export class NewsfeedpersComponent {}
+export class NewsfeedpersComponent {
 
-let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
-console.log(storedValues);
-// console.log(storedValues[2]);
+  topicNews : any = []
+
+  storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
+
+  topicApiLink: string = this.NewsApiService.urlLink + this.storedValues.join(" AND ") + this.NewsApiService.urlKey
+
+
+  constructor(
+    private NewsApiService: NewsApiService,) {
+console.log(this.topicApiLink)
+    }
+
+
+
+  ngOnInit() {
+
+    fetch(this.topicApiLink)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+
+    this.topicNews = data.articles
+    console.log(this.topicNews)
+  })
+  .catch(error => {
+    console.error("There was a problem with the fetch operation:", error);
+  });
+
+
+        let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
+        console.log(storedValues);
+        // console.log(storedValues[0]);
+        // console.log(storedValues[1]);
+        // console.log(storedValues[2]);
+
+
+      };
+
+
+}
+
+
+
+
+

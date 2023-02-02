@@ -41,6 +41,6 @@ export class TopicsComponent {
     // let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
     // console.log(storedValues);
 
-    // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
+    localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
   }
 }
