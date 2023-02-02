@@ -29,11 +29,11 @@ Route::get('/topics', function () {
 });
 
 // post topics of user id
-Route::post('/topics/{user_id}', function (Request $request) {
+Route::post('/topics/{user_id}', function (Request $request, $user_id) {
     DB::table('topic_user')->insert([
-
         // 'id' => $request->input('id'),
-        'user_id' => $request->input('user_id'),
+        // 'user_id' => {$request->input('user_id'),}
+        'user_id' => $user_id,
         'topic_id' => $request->input('topic_id'),
 
     ]);

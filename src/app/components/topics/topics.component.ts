@@ -7,6 +7,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-topics',
@@ -25,17 +26,54 @@ export class TopicsComponent implements OnInit {
       this.checkedTopics.push(event.target.value);
     } else {
       // remove again if unchecked
-      this.checkedTopics.filter(
+      this.checkedTopics = this.checkedTopics.filter(
         (number: number) => number != event.target.value
       );
     }
   }
 
   onSubmit() {
+    // Get user id
     let userId = localStorage.getItem('userId');
     console.log(userId);
     console.log(this.checkedTopics);
+
+    // let topicsTest = {
+    //   user_id: userId,
+    //   topic_id: 5
+    // };
+
+    this.checkedTopics
+      .map((tid) => new CreateSubscription(tid))
+      .forEach((req) => this.saveTopics(userId, req));
   }
+
+  saveTopics(userId: any, req: CreateSubscription) {
+    fetch(this.url + 'topics/' + userId, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(req),
+    });
+  }
+
+  // adduser(newUser: any) {
+  //   fetch(this.url + 'users', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(newUser),
+  //   }).then((res) => {
+  //     if (res.status == 201) {
+  //       this.toastr.success('user succesfully created');
+  //       this.router.navigate(['/topics']);
+  //     } else {
+  //       this.toastr.warning('Whoops', 'Something went wrong');
+  //     }
+  //   });
+  // }
 
   // Testing //
 
@@ -83,5 +121,12 @@ export class TopicsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchtopics();
+  }
+}
+
+export class CreateSubscription {
+  topic_id: number;
+  constructor(topic_id: number) {
+    this.topic_id = topic_id;
   }
 }
