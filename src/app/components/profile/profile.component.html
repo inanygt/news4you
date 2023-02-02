@@ -9,11 +9,13 @@
               id="logonws"
               alt="logonws_logo"
             />
+            <h1>Profile Page</h1>
           </div>
           <div class="panel-body p-2">
             <div class="form-group pt2">
               <div class="input-field">
                 <div class="userinput">
+                  <h3>User info</h3>
                   <p>Username: {{ user.userName }}</p>
                   <p>Email: {{ user.email }}</p>
                   <p>Birth Date: {{ user.birthDate }}</p>
@@ -30,68 +32,87 @@
                 </div>
 
                 <div class="topics">
-                  Topics:
-                  <div class="col-md-12">
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="Sports"
-                      id="sports"
-                    />
-                    Sports
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="Politics"
-                      id="politics"
-                    />
-                    Politics
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="War"
-                      id="war"
-                    />
-                    War
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="Financial"
-                      id="financial"
-                    />
-                    Financial
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="Crypto"
-                      id="crypto"
-                    />
-                    Crypto
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="Tech"
-                      id="tech"
-                    />
-                    Tech
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="Science"
-                      id="science"
-                    />
-                    Science
-                    <input
-                      class="checkbox"
-                      type="checkbox"
-                      name="Health"
-                      id="health"
-                    />
-                    Health
+                  <h3>Topics:</h3>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="Sports"
+                        id="sports"
+                      />Sports
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="Politics"
+                        id="politics"
+                      />Politics
+                    </div>
                   </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="War"
+                        id="war"
+                      />War
 
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="Financial"
+                        id="financial"
+                      />Financial
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="Crypto"
+                        id="crypto"
+                      />Crypto
+
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="Tech"
+                        id="tech"
+                      />Tech
+
+                    </div>
+                  </div>
+                  <div class="row topic">
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="Science"
+                        id="science"
+                      />Science
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        name="Health"
+                        id="health"
+                      />Health
+
+                    </div>
+                  </div>
                   <button type="submit" class="btn btn-primary">Save</button>
                 </div>
+
               </div>
             </div>
           </div>
