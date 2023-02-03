@@ -12,6 +12,7 @@ export class NwsapiService {
   url = 'http://localhost:8000/api/';
 
   // Get all users
+  // make camelcase ->
   getusers() {
     return fetch(this.url + 'users')
       .then((res) => res.json())
