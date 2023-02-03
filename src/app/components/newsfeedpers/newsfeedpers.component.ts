@@ -21,7 +21,7 @@ export class NewsfeedpersComponent {
 
   storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
 
-  topicApiLink: string = this.NewsApiService.urlLink + this.storedValues.join(" AND ") + this.NewsApiService.urlKey
+  topicApiLink: string = this.NewsApiService.urlLink + this.storedValues.join(" OR ") + this.NewsApiService.urlKey
 
 
   constructor(

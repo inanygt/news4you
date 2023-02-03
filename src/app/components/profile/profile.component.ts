@@ -88,11 +88,11 @@ export class ProfileComponent implements OnInit {
         // console.log(username)
 
         let user = JSON.parse(localStorage.getItem('user')!);
-        console.log(user);
-        console.log(user[0].userName);
-        console.log(user[0].email);
-        console.log(user[0].birthDate);
-        console.log(user[0].createdAt);
+        // console.log(user);
+        // console.log(user[0].userName);
+        // console.log(user[0].email);
+        // console.log(user[0].birthDate);
+        // console.log(user[0].createdAt);
         this.user = user[0];
       });
 
