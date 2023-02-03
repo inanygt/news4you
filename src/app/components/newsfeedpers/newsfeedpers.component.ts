@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   FormBuilder,
@@ -15,8 +15,24 @@ import { NewsApiService } from 'src/app/Services/news-api-service';
   templateUrl: './newsfeedpers.component.html',
   styleUrls: ['./newsfeedpers.component.css'],
 })
-export class NewsfeedpersComponent {}
+export class NewsfeedpersComponent implements OnInit {
+  url = 'http://localhost:8000/api/';
 
-let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
-console.log(storedValues);
-// console.log(storedValues[2]);
+  //   let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
+  // console.log(storedValues);
+  // console.log(storedValues[2]);
+
+  fetchTopics() {
+    let userId = localStorage.getItem('userId');
+    fetch(this.url + 'topics/' + userId)
+      .then((res) => res.json())
+      .then((data) => {
+        let topics = data.map((topic: { name: any }) => topic.name);
+        console.log(topics);
+      });
+  }
+
+  ngOnInit(): void {
+    this.fetchTopics();
+  }
+}

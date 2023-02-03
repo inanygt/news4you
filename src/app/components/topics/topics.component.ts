@@ -38,11 +38,6 @@ export class TopicsComponent implements OnInit {
     console.log(userId);
     console.log(this.checkedTopics);
 
-    // let topicsTest = {
-    //   user_id: userId,
-    //   topic_id: 5
-    // };
-
     this.checkedTopics
       .map((tid) => new CreateSubscription(tid))
       .forEach((req) => this.saveTopics(userId, req));
