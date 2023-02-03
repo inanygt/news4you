@@ -3,6 +3,27 @@
     <div class="col">
       <h1>My personal feed</h1>
       <hr />
-    </div>
-  </div>
+      <div class="row p-5 gx-5">
+        <div class="col-lg-6 col-xl-4" *ngFor="let topicNews of topicNews">
+          <div id="categories">#{{ topicNews.source.name }}</div>
+          <h2>{{ topicNews.title }}</h2>
+          <div class="description">{{ topicNews.description }}</div>
+          <img src="{{ topicNews.urlToImage }}" alt="" />
+          <!-- link read more -->
+          <div class="d-flex justify-content-between">
+            <div id="read-more">
+              <a href="{{ topicNews.url }}" target="_blank"
+                >Read more <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <!-- <div
+              id="bookmark"
+              (click)="bookmarkMe(topicNews.title, topicNews.url)"
+            >
+              <i class="fa-regular fa-bookmark"></i>
+            </div> -->
+          </div>
+          <hr />
+        </div>
+      </div>
 </div>

@@ -19,8 +19,9 @@ export class NavbarComponent {
   }
 
   logout() {
-    localStorage.removeItem('userId');
-  }
+      localStorage.clear();
+      }
+
 
   search() {
     this.searchWord = this.searchTerm;

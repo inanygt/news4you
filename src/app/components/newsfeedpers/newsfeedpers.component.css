@@ -1,0 +1,56 @@
+img {
+  width: 100%;
+}
+
+.searchRow {
+  margin: auto;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+.description {
+  margin-bottom: 1rem;
+}
+
+#categories {
+  margin-bottom: -0.8rem;
+  font-family: "Rokkitt", serif;
+  color: green;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.title {
+  font-weight: bold;
+  font-size: large;
+}
+
+#read-more {
+  padding-top: 0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+#bookmark {
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 #000000;
+  color: #000000;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+a:hover {
+  box-shadow: inset 100px 0 0 0 #000000;
+  color: white;
+}
