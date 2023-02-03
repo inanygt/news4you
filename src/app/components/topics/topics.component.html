@@ -10,6 +10,23 @@
               alt="logonws_logo"
             />
           </div>
+
+          <!-- Testing environment -->
+          <div class="row m-5">
+            <div class="col-6" *ngFor="let topic of topics">
+              <input
+                type="checkbox"
+                [value]="topic.id"
+                (change)="getTopicId($event)"
+              />
+              {{ topic.name }}
+            </div>
+            <a class="btn btn-primary" (click)="onSubmit()">submit</a>
+          </div>
+
+          <!-- <div class="btn btn-primary">{{ topic.name }} {{ topic.id }}</div> -->
+
+          <!-- Submit form -->
           <form [formGroup]="form" (ngSubmit)="submitForm()">
             <div class="row">
               <div class="col-8">
@@ -17,8 +34,9 @@
                   <div class="cat sports">
                     <label>
                       <input formControlName="Sports" type="checkbox" /><span
-                        ><i class="fa-solid fa-football"></i> Sports</span
-                      >
+                        ><i class="fa-solid fa-football"></i>
+                        sports
+                      </span>
                     </label>
                   </div>
 
