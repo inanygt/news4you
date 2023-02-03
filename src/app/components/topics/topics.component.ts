@@ -112,11 +112,11 @@ export class TopicsComponent implements OnInit {
     // }
     // let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
   }
-  
-     // console.log(storedValues);
 
-    localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
-        // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
+  // console.log(storedValues);
+
+  // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
+  // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
 
   ngOnInit(): void {
     this.fetchtopics();
