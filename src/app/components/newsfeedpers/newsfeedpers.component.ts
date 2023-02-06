@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { TopicsComponent } from '../topics/topics.component';
 import { NewsApiService } from 'src/app/Services/news-api-service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-newsfeedpers',
@@ -49,6 +50,7 @@ export class NewsfeedpersComponent implements OnInit {
             console.log(this.topicNews);
           })
           .catch((error) => {
+            this.toastr.warning('No topics saved')
             console.error(
               'There was a problem with the fetch operation:',
               error
@@ -57,7 +59,8 @@ export class NewsfeedpersComponent implements OnInit {
       });
   }
 
-  constructor(private NewsApiService: NewsApiService) {
+  constructor(private NewsApiService: NewsApiService, private toastr: ToastrService) {
+
     // console.log(this.topicApiLink);
   }
 

@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { subscribeOn } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-topics',
@@ -15,7 +16,7 @@ import { subscribeOn } from 'rxjs';
   styleUrls: ['./topics.component.css'],
 })
 export class TopicsComponent implements OnInit {
-  constructor() {}
+  constructor( private toastr: ToastrService) {}
 
   // Testing //
 
@@ -37,6 +38,7 @@ export class TopicsComponent implements OnInit {
     let userId = localStorage.getItem('userId');
     console.log(userId);
     console.log(this.checkedTopics);
+    this.toastr.success('Topics saved')
 
     this.checkedTopics
       .map((tid) => new CreateSubscription(tid))
@@ -53,24 +55,6 @@ export class TopicsComponent implements OnInit {
     });
   }
 
-  // adduser(newUser: any) {
-  //   fetch(this.url + 'users', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(newUser),
-  //   }).then((res) => {
-  //     if (res.status == 201) {
-  //       this.toastr.success('user succesfully created');
-  //       this.router.navigate(['/topics']);
-  //     } else {
-  //       this.toastr.warning('Whoops', 'Something went wrong');
-  //     }
-  //   });
-  // }
-
-  // Testing //
 
   url = 'http://localhost:8000/api/';
   topics!: any;

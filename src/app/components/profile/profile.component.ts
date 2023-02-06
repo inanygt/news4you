@@ -1,35 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-profile',
-//   templateUrl: './profile.component.html',
-//   styleUrls: ['./profile.component.css']
-// })
-// export class ProfileComponent {
-
-//   users: any;
-
-//   constructor() { }
-
-//   ngOnInit() {
-//     fetch('http://localhost:8000/api/users')
-//       .then(response => response.json())
-//       .then(data => {
-//         this.users = data;
-//         console.log(this.users)
-
-//         let user = JSON.parse(localStorage.getItem('user')!);
-//         console.log(user)
-//         console.log(user[0].userName);
-//         let username = user[0].userName
-//         console.log(username)
-
-//       });
-
-//   }
-
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -37,8 +5,7 @@ import { TopicsComponent } from '../topics/topics.component';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { subscribeOn } from 'rxjs';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-
-
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -49,16 +16,6 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
-  // selectedTopics = {
-  //   sports: false,
-  //   politics: false,
-  //   war: false,
-  //   financial: false,
-  //   crypto: false,
-  //   tech: false,
-  //   science: false,
-  //   health: false,
-  // };
 
   checkedTopics: number[] = [];
 
@@ -82,6 +39,7 @@ export class ProfileComponent implements OnInit {
     this.checkedTopics
       .map((tid) => new CreateSubscription(tid))
       .forEach((req) => this.saveTopics(userId, req));
+      this.toastr.success('New Topics Saved');
   }
 
   saveTopics(userId: any, req: CreateSubscription) {
@@ -105,27 +63,6 @@ export class ProfileComponent implements OnInit {
       });
   }
 
-  form = new FormGroup({
-    Sports: new FormControl(false),
-    // Sports: new FormControl(false),
-    Politics: new FormControl(false),
-    War: new FormControl(false),
-    Financial: new FormControl(false),
-    Crypto: new FormControl(false),
-    Tech: new FormControl(false),
-    Science: new FormControl(false),
-    Health: new FormControl(false),
-    // other formControls here
-  });
-
-  submitForm() {
-    let selectedValues = Object.entries(this.form.value)
-      .filter(([key, value]) => value)
-      .map(([key, value]) => key);
-
-      // selectedValues = selectedValues.filter((topic, index, self) => self.indexOf(topic) === index);
-    console.log(selectedValues);
-  }
 
   clearTopics() {
     let userId = localStorage.getItem('userId');
@@ -137,27 +74,18 @@ export class ProfileComponent implements OnInit {
     }).then(() => {
     // clear the checkedTopics array after the topics are cleared from the database
     this.checkedTopics = [];
+    // Show a success toast notification
+    this.toastr.success('Topics Deleted');
+
     });
     }
-
-  // saveChecked() {
-
-  //   localStorage.setItem('selectedTopics', JSON.stringify(this.selectedTopics));
-  //   // TODO: Send the data to the database
-  //   console.log(this.selectedTopics)
-  // }
-
-
-
 
   user: any;
 
   users: any;
 
 
-
-
-  constructor(private router: Router) {
+  constructor(private router: Router, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -167,19 +95,7 @@ export class ProfileComponent implements OnInit {
       .then((data) => {
         this.users = data;
         console.log(this.users);
-
-        // let user = JSON.parse(localStorage.getItem('user')!);
-        // console.log(user)
-        // console.log(user[0].userName);
-        // let username = user[0].userName
-        // console.log(username)
-
         let user = JSON.parse(localStorage.getItem('user')!);
-        // console.log(user);
-        // console.log(user[0].userName);
-        // console.log(user[0].email);
-        // console.log(user[0].birthDate);
-        // console.log(user[0].createdAt);
         this.user = user[0];
       });
 

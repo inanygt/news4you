@@ -58,17 +58,6 @@ return DB::table('topic_user')->where('user_id', $user_id)
 ->get();
 });
 
-// Route::get('/topics/{user_id}', function ($user_id) {
-//     return DB::table('topic_user')
-//         ->join('topics', 'topics.id', '=', 'topic_user.topic_id')
-//         ->select('topics.name')
-//         ->where('topic_user.user_id', $user_id)
-//         ->get();
-// });
-
-
-
-
 
 
 // Get user login

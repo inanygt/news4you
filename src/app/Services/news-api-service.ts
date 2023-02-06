@@ -39,10 +39,6 @@ export class NewsApiService {
   searchLink: string = this.urlLink + this.keyWord + this.urlKey;
   mergedData!: any;
 
-  // topicApiLink: string = this.urlLink + this.storedValues.join(" AND ") + this.urlKey
-
-//   let link = "https://api.example.com/" + myArray.join(" And ") + "/apikey";
-// console.log(link);
 
   searchData: any[] = [];
 
