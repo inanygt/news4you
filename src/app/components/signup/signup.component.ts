@@ -43,6 +43,8 @@ export class SignupComponent implements OnInit {
     this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
+  url = 'http://localhost:8000/api/';
+
   signup() {
     const newUser = {
       userName: this.userName,
@@ -53,6 +55,17 @@ export class SignupComponent implements OnInit {
     };
     console.log(newUser);
     this.NwsapiService.adduser(newUser);
+
+    this.NwsapiService.checkuser(this.userName, this.password);
+
+    fetch(this.url + 'users/' + this.userName)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data[0].id);
+      window.localStorage.setItem('userId', data[0].id);
+      console.log(window.localStorage.getItem('userId'));
+    });
+
   }
 
   // Test topics

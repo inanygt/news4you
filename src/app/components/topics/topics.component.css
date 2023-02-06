@@ -78,7 +78,10 @@ div label input {
   margin-right: 100px;
 }
 
-.cat{
+.btn {
+  margin-top: 10px;
+}
+/* .cat{
   margin: 4px;
   background-color: #104068;
   border-radius: 4px;
@@ -124,4 +127,4 @@ div label input {
 
 label:hover {
   cursor: pointer;
-}
+} */

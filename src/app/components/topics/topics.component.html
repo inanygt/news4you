@@ -21,13 +21,13 @@
               />
               {{ topic.name }}
             </div>
-            <a class="btn btn-primary" (click)="onSubmit()">submit</a>
+            <a class="btn btn-primary" (click)="onSubmit()" routerLink="/login">submit</a>
           </div>
 
           <!-- <div class="btn btn-primary">{{ topic.name }} {{ topic.id }}</div> -->
 
           <!-- Submit form -->
-          <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <!-- <form [formGroup]="form" (ngSubmit)="submitForm()">
             <div class="row">
               <div class="col-8">
                 <div class="container">
@@ -99,9 +99,9 @@
               </div>
 
               <input class="subbutton" type="submit" value="Submit" />
-              <!-- routerLink="/personal" -->
+              routerLink="/personal"
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>
