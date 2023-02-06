@@ -47,7 +47,7 @@ export class NwsapiService {
         .catch((error) => {
           if (error.message === 'User not found')
             this.toastr.error('User not found', 'Unable to login');
-          else this.toastr.error('Error', 'An error occured');
+          // else this.toastr.error('Error', 'An error occured');
         })
     );
   }
