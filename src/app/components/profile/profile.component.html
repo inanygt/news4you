@@ -34,7 +34,19 @@
 
                 <div class="topics">
                   <h3>Topics:</h3>
-                  <div class="row">
+                  <div class="row m-5">
+                    <div class="col-6" *ngFor="let topic of topics">
+                      <input
+                        type="checkbox"
+                        [value]="topic.id"
+                        (change)="getTopicId($event)"
+                      />
+                      {{ topic.name }}
+                    </div>
+                    <a class="btn btn-primary" (click)="onSubmit()">submit</a>
+                    <a class="btn btn-primary" (click)="clearTopics()">Clear Topics</a>
+                  </div>
+                  <!-- <div class="row">
                     <div class="col-md-6">
                       <p>
                       <input
@@ -122,8 +134,20 @@
                     </p>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary" (click)="saveChecked">Save</button>
-                </div>
+                  <button type="submit" class="btn btn-primary" >Save</button>
+                </div> -->
+
+                <!-- <div class="row m-5">
+                  <div class="col-6" *ngFor="let topic of topics">
+                    <input
+                      type="checkbox"
+                      [value]="topic.id"
+                      (change)="getTopicId($event)"
+                    />
+                    {{ topic.name }}
+                  </div>
+                  <a class="btn btn-primary" (click)="onSubmit()" routerLink="/login">submit</a>
+                </div> -->
 
               </div>
             </div>

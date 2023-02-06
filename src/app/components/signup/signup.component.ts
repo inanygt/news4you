@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
     console.log(newUser);
     this.NwsapiService.adduser(newUser);
 
-    this.NwsapiService.checkuser(this.userName, this.password);
+     this.NwsapiService.checkuser(this.userName, this.password);
 
     fetch(this.url + 'users/' + this.userName)
     .then((res) => res.json())

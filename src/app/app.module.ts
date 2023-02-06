@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
     HomeComponent,
     SignupComponent,
     NavbarComponent,
-
+    ProfileComponent,
     BookmarksComponent,
   ],
   imports: [
@@ -63,5 +64,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {}

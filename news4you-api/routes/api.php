@@ -18,27 +18,38 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// get all users 
+// get all users
 Route::get('/users', function () {
-    return DB::table('users')->get(); 
+    return DB::table('users')->get();
 });
 
 // get all topics
 Route::get('/topics', function () {
-    return DB::table('topics')->get(); 
+    return DB::table('topics')->get();
 });
 
 
 
-// post topics of user id
 Route::post('/topics/{user_id}', function (Request $request, $user_id) {
-    DB::table('topic_user')->insert([
-        // 'id' => $request->input('id'),
-        // 'user_id' => {$request->input('user_id'),}
-        'user_id' => $user_id,
-        'topic_id' => $request->input('topic_id')
-    ]);
+    // Check if the user has already selected the topic
+    $existingRecord = DB::table('topic_user')
+        ->where('user_id', $user_id)
+        ->where('topic_id', $request->input('topic_id'))
+        ->first();
+
+    if (!$existingRecord) {
+        DB::table('topic_user')->insert([
+            'user_id' => $user_id,
+            'topic_id' => $request->input('topic_id')
+        ]);
+    }
 });
+
+Route::delete('/topics/{user_id}', function (Request $request, $user_id) {
+    DB::table('topic_user')
+    ->where('user_id', $user_id)
+    ->delete();
+    });
 
 // get topics for specific user id
 Route::get('/topics/{user_id}', function ($user_id) {
@@ -62,7 +73,7 @@ return DB::table('topic_user')->where('user_id', $user_id)
 
 // Get user login
 Route::get('/users/{userName}', function ($userName) {
-    
+
     if (!DB::table('users')->where('userName', $userName)->exists()) {
         return response()->json([
             'message' => 'User not found'
@@ -71,7 +82,7 @@ Route::get('/users/{userName}', function ($userName) {
     return DB::select('select * from users where userName = ?', [$userName]);
 });
 
-// Add user to database 
+// Add user to database
 Route::post('/users', function (Request $request) {
     $userName = $request->input('userName');
     $password = $request->input('password');
@@ -100,11 +111,11 @@ Route::post('/users', function (Request $request) {
     ], 201);
 });
 
-// BOOKMARKS // BOOKMARKS // BOOKMARKS  // 
+// BOOKMARKS // BOOKMARKS // BOOKMARKS  //
 
-// get all bookmarks 
+// get all bookmarks
 Route::get('/bookmarks', function () {
-    return DB::table('bookmarks')->get(); 
+    return DB::table('bookmarks')->get();
 });
 
 // get bookmarks for specific user id
