@@ -93,13 +93,7 @@ export class NewsfeedpersComponent implements OnInit {
 
   topicNews: any = [];
 
-  // storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
 
-  // get api link with multiple keywords from topics
-  // topicApiLink: string =
-  //   this.NewsApiService.urlLink +
-  //   this.storedValues.join(' OR ') +
-  //   this.NewsApiService.urlKey;
 
   ngOnInit(): void {
     this.fetchTopics();
