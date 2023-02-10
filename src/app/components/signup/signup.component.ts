@@ -39,12 +39,10 @@ export class SignupComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-  }
-
+// database api
   url = 'http://localhost:8000/api/';
 
+  // signup , POST + GET user
   signup() {
     const newUser = {
       userName: this.userName,

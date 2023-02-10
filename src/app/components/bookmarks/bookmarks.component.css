@@ -1,3 +1,7 @@
 .bookmark-title {
   margin-bottom: 3rem;
 }
+
+#delete:hover {
+cursor: pointer;
+}

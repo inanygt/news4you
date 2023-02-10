@@ -67,40 +67,6 @@ export class TopicsComponent implements OnInit {
       });
   }
 
-  // FormGroup
-
-  form = new FormGroup({
-    Sports: new FormControl(false),
-    // Sports: new FormControl(false),
-    Politics: new FormControl(false),
-    War: new FormControl(false),
-    Financial: new FormControl(false),
-    Crypto: new FormControl(false),
-    Tech: new FormControl(false),
-    Science: new FormControl(false),
-    Health: new FormControl(false),
-    // other formControls here
-  });
-
-  submitForm() {
-    let selectedValues = Object.entries(this.form.value)
-      .filter(([key, value]) => value)
-      .map(([key, value]) => key);
-
-    console.log(selectedValues);
-
-    // console.log(selectedValues[0])
-    // console.log(selectedValues[1])
-    // if (selectedValues !== null) {
-    //   localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
-    // }
-    // let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
-  }
-
-  // console.log(storedValues);
-
-  // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
-  // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
 
   ngOnInit(): void {
     this.fetchtopics();
