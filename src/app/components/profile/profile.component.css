@@ -1,6 +1,10 @@
+
 .outer {
   height: 100vh;
   background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%) no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #logonws {
@@ -8,14 +12,14 @@
   margin: 2em;
 }
 
-#noUser {
-  color: red;
-  margin-left: 1.5rem;
-}
+
 
 .container {
   max-width: 1400px;
   max-height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .panel-heading {
   text-align: center;
@@ -24,18 +28,29 @@
 .input-field {
   margin: 30px;
   min-height: 300px;
+  min-width: 1000px
 }
 .userinput {
   margin: 30px;
   border: 3px solid rgb(151, 151, 151);
   border-radius: 10px;
   padding: 20px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .topics {
-  margin: 30px;
+  margin: 10px;
   border: 3px solid rgb(151, 151, 151);
   border-radius: 10px;
-  padding: 50px;
+  padding: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
 }
 
 .btn {
@@ -71,3 +86,13 @@
   border-top: 1px solid #aaa;
   position: relative;
 }
+div.row topic {
+  width: 200px;
+}
+
+
+
+label:hover {
+  cursor: pointer;
+}
+

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NwsapiService } from 'src/app/Services/nwsapi.service';
-
 import { Users } from 'src/app/users';
 import { ToastrService } from 'ngx-toastr';
 
@@ -40,10 +39,10 @@ export class SignupComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-  }
+// database api
+  url = 'http://localhost:8000/api/';
 
+  // signup , POST + GET user
   signup() {
     const newUser = {
       userName: this.userName,
@@ -54,7 +53,27 @@ export class SignupComponent implements OnInit {
     };
     console.log(newUser);
     this.NwsapiService.adduser(newUser);
+
+     this.NwsapiService.checkuser(this.userName, this.password);
+
+    fetch(this.url + 'users/' + this.userName)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data[0].id);
+      window.localStorage.setItem('userId', data[0].id);
+      console.log(window.localStorage.getItem('userId'));
+    });
+
   }
+
+  // Test topics
+
+  topicsObject = {
+    sports: false,
+    science: false,
+    tech: false,
+    crypto: false,
+  };
 
   ngOnInit(): void {}
 }

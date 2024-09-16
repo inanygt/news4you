@@ -1,52 +1,81 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
-
+import {
+  FormBuilder,
+  FormGroup,
+  FormArray,
+  FormControl,
+  Validators,
+} from '@angular/forms';
+import { subscribeOn } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-topics',
   templateUrl: './topics.component.html',
-  styleUrls: ['./topics.component.css']
+  styleUrls: ['./topics.component.css'],
 })
+export class TopicsComponent implements OnInit {
+  constructor( private toastr: ToastrService) {}
 
+  // Testing //
 
-export class TopicsComponent{
-    form = new FormGroup({
-    Sports: new FormControl(false),
-    Politics: new FormControl(false),
-    War: new FormControl(false),
-    Financial: new FormControl(false),
-    Crypto: new FormControl(false),
-    Tech: new FormControl(false),
-    Science: new FormControl(false),
-    Health: new FormControl(false),
-    // other formControls here
-  });
+  checkedTopics: number[] = [];
 
+  getTopicId(event: any) {
+    if (event.target.checked) {
+      this.checkedTopics.push(event.target.value);
+    } else {
+      // remove again if unchecked
+      this.checkedTopics = this.checkedTopics.filter(
+        (number: number) => number != event.target.value
+      );
+    }
+  }
 
-  submitForm() {
-    let selectedValues = Object.entries(this.form.value)
-      .filter(([key, value]) => value)
-      .map(([key, value]) => key);
-    console.log(selectedValues);
-    // console.log(selectedValues[0])
-    // console.log(selectedValues[1])
-    // if (selectedValues !== null) {
-    //   localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
-    // }
-    // // var storedValues = JSON.parse(localStorage.getItem("selectedValues"));
+  onSubmit() {
+    // Get user id
+    let userId = localStorage.getItem('userId');
+    console.log(userId);
+    console.log(this.checkedTopics);
+    this.toastr.success('Topics saved')
 
-    // let storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
-    // console.log(storedValues);
+    this.checkedTopics
+      .map((tid) => new CreateSubscription(tid))
+      .forEach((req) => this.saveTopics(userId, req));
+  }
 
-    // localStorage.setItem("selectedValues", JSON.stringify(selectedValues));
-
-
+  saveTopics(userId: any, req: CreateSubscription) {
+    fetch(this.url + 'topics/' + userId, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(req),
+    });
   }
 
 
+  url = 'http://localhost:8000/api/';
+  topics!: any;
+
+  fetchtopics() {
+    fetch(this.url + 'topics')
+      .then((res) => res.json())
+      .then((data) => {
+        this.topics = data;
+      });
+  }
 
 
-
+  ngOnInit(): void {
+    this.fetchtopics();
+  }
 }
 
+export class CreateSubscription {
+  topic_id: number;
+  constructor(topic_id: number) {
+    this.topic_id = topic_id;
+  }
+}

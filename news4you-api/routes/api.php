@@ -18,28 +18,60 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// get all users 
+// get all users
 Route::get('/users', function () {
-    return DB::table('users')->get(); 
+    return DB::table('users')->get();
 });
+
+// get all topics
+Route::get('/topics', function () {
+    return DB::table('topics')->get();
+});
+
+
+
+Route::post('/topics/{user_id}', function (Request $request, $user_id) {
+    // Check if the user has already selected the topic
+    $existingRecord = DB::table('topic_user')
+        ->where('user_id', $user_id)
+        ->where('topic_id', $request->input('topic_id'))
+        ->first();
+
+    if (!$existingRecord) {
+        DB::table('topic_user')->insert([
+            'user_id' => $user_id,
+            'topic_id' => $request->input('topic_id')
+        ]);
+    }
+});
+
+Route::delete('/topics/{user_id}', function (Request $request, $user_id) {
+    DB::table('topic_user')
+    ->where('user_id', $user_id)
+    ->delete();
+    });
+
+// get topics for specific user id
+Route::get('/topics/{user_id}', function ($user_id) {
+return DB::table('topic_user')->where('user_id', $user_id)
+->join('topics', 'topics.id', '=', 'topic_user.topic_id')
+->get();
+});
+
 
 
 // Get user login
 Route::get('/users/{userName}', function ($userName) {
-    
+
     if (!DB::table('users')->where('userName', $userName)->exists()) {
         return response()->json([
             'message' => 'User not found'
         ], 404);
     }
-
-    // return DB::table('users')->where('userName', $userName)->first();
-    // do the same but with plain sql
     return DB::select('select * from users where userName = ?', [$userName]);
-
 });
 
-// Add user to database 
+// Add user to database
 Route::post('/users', function (Request $request) {
     $userName = $request->input('userName');
     $password = $request->input('password');
@@ -66,4 +98,51 @@ Route::post('/users', function (Request $request) {
     return response()->json([
         'message' => 'User created'
     ], 201);
+});
+
+// BOOKMARKS // BOOKMARKS // BOOKMARKS  //
+
+// get all bookmarks
+Route::get('/bookmarks', function () {
+    return DB::table('bookmarks')->get();
+});
+
+// get bookmarks for specific user id
+Route::get('/bookmarks/{user_id}', function ($user_id) {
+return DB::table('bookmarks')->where('user_id', $user_id)->get();
+});
+
+// Get bookmark id of specific user id
+Route::get('/bookmarks/{user_id}/{id}', function ($user_id, $id) {
+return DB::table('bookmarks')->where('user_id', $user_id)->where('id', $id)->first();
+});
+
+// add bookmark to user
+Route::post('/bookmarks', function (Request $request) {
+    DB::table('bookmarks')->insert([
+
+        'id' => $request->input('id'),
+        'user_id' => $request->input('user_id'),
+        'url' => $request->input('url'),
+        'title' => $request->input('title'),
+        // 'createdAt' => $createdAt,
+    ]);
+});
+
+// Delete bookmark
+Route::delete('/bookmarks/{user_id}/{id}', function ($user_id, $id) {
+    // if (!DB::table('bookmarks')->where('id', $id)->exists()) {
+    //     return response()->json([
+    //         'message' => 'Message not found'
+    //     ], 404);
+    // }
+
+    DB::table('bookmarks')
+    ->where('id', $id)
+    ->where('user_id', $user_id)
+    ->delete();
+
+    return response()->json([
+        'message' => 'Bookmark deleted'
+    ], 200);
 });

@@ -6,10 +6,6 @@
 /* font-family: 'Rokkitt', serif; */
 @import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* body {
-  background-color: #6987c9;
-} */
-
 /* Toast Css */
 @import "ngx-toastr/toastr";
 

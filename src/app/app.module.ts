@@ -1,10 +1,12 @@
 // DEPENDENCIES
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -17,8 +19,8 @@ import { NewsfeedtopicComponent } from '././components/newsfeedtopic/newsfeedtop
 import { TopicsComponent } from '././components/topics/topics.component';
 import { HomeComponent } from '././components/home/home.component';
 import { SignupComponent } from '././components/signup/signup.component';
-
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 const appRoutes: Routes = [
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
   { path: 'personal', component: NewsfeedpersComponent },
   { path: 'topics', component: TopicsComponent },
   { path: 'topic', component: NewsfeedtopicComponent },
-  { path: 'profile', component: ProfileComponent},
+  { path: 'bookmarks', component: BookmarksComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({
@@ -48,6 +51,7 @@ const appRoutes: Routes = [
     SignupComponent,
     NavbarComponent,
     ProfileComponent,
+    BookmarksComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,5 +64,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {}

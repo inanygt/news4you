@@ -26,9 +26,12 @@ export class NewsApiService {
   newdata: any[] = [];
   constructor() {}
 
+
   getData() {
     return fetch(this.url).then((response) => response.json());
   }
+
+  storedValues = JSON.parse(localStorage.getItem('selectedValues')!);
 
   urlLink: string = 'https://newsapi.org/v2/everything?q=';
   urlKey: string = '&apiKey=712dd0a6c8324f769ff3b97bd5590776';
@@ -36,9 +39,18 @@ export class NewsApiService {
   searchLink: string = this.urlLink + this.keyWord + this.urlKey;
   mergedData!: any;
 
+
   searchData: any[] = [];
 
   getSearch() {
     return fetch(this.searchLink).then((res) => res.json());
   }
+
+  // getTopicApi(){
+  //   return fetch(this.topicApiLink).then((res) => res.json());
+  //   console.log(this.topicApiLink)
+
+
+
+  // }
 }

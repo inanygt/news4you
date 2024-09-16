@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="bookmark-title">
+    <h1>My bookmarks</h1>
+  </div>
+  <hr />
+  <div class="row gx-5">
+    <div class="col-lg-6 col-xl-4" *ngFor="let bookmark of bookmarks">
+      <div class="box">
+        <h3>{{ bookmark.title }}</h3>
+        <div class="description truncate">
+          {{ bookmark.description }} {{ bookmark.content }}
+        </div>
+        <img src="{{ bookmark.urlToImage }}" alt="" />
+        <img src="{{ bookmark.image_url }}" alt="" />
+        <div class="d-flex justify-content-between">
+          <div id="read-more">
+            <a class="readMore" href="{{ bookmark.url }}" target="_blank"
+              >Read more <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div id="delete" (click)="deleteBm(bookmark.id)">
+            <i class="fa-solid fa-delete-left"></i>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
